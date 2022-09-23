@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header
+      #company
+        img#logo(src="/images/logo.png")
+        p#compName Asha Scientific Works 
+
+      form#search(method='POST' action='/search')
+
+        div.form-group
+          label(for='searchInput') Input:
+          input#searchInput.form-control(type='text' name='searchInput' placeholder='Enter search term')
+    
+        button.btn.btn-primary(type='submit') Submit
+
+    nav 
+      ul
+        li
+          a(href='/') Home
+        li
+          a(href='/about') Company Profile
+        li
+          a(href='/categories') Our Products
+        li
+          a(href='/contact') Contact Us
+
+    block content
+
+    footer
+      #addr 
+        a(href='#')
+          i.fa.fa-arrow-up(aria-hidden='true')
+        p#addrText Address
+
+      #phone 
+        a(href='#')
+          i.fa.fa-arrow-up(aria-hidden='true')
+        p#phoneText 041170
+
+      #owner 
+        a(href='#')
+          i.fa.fa-arrow-up(aria-hidden='true')
+        p#ownerText Mr. John Doe
+        p#ownerphone 0242319
+
+      img#stamp(src="/images/stamp.png")

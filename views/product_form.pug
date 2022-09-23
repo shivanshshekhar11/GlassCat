@@ -1,0 +1,80 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Name:
+      input#name.form-control(type='text', placeholder='e.g. Air Permeability Appratus' name='name' required value=(undefined===product ? '' : product.name))
+
+    div.form-group
+      label(for='price') Price:
+      input#price.form-control(type='text', placeholder='e.g. 10000000' name='price' value=(undefined===product ? '' : product.price))
+
+    div.form-group
+      label(for='minOrder') Minimum Order:
+      input#minOrder.form-control(type='text', placeholder='e.g. 1' name='minOrder' value=(undefined===product ? '' : product.minOrder))
+
+    div.form-group
+      label(for='technology') Technology:
+      input#technology.form-control(type='text', placeholder='e.g. LASER' name='technology' value=(undefined===product ? '' : product.technology))
+
+    div.form-group
+      label(for='material') Material:
+      input#material.form-control(type='text', placeholder='e.g. Wood' name='material' value=(undefined===product ? '' : product.material))
+
+    div.form-group
+      label(for='weight') Weight:
+      input#weight.form-control(type='text', placeholder='e.g. 10 KG' name='weight' value=(undefined===product ? '' : product.weight))
+
+    div.form-group
+      label(for='drivenMethod') Driven Method:
+      input#drivenMethod.form-control(type='text', placeholder='e.g. Automatic' name='drivenMethod' value=(undefined===product ? '' : product.drivenMethod))
+
+    div.form-group
+      label(for='paymentTerms') Payment Terms:
+      input#paymentTerms.form-control(type='text', placeholder='e.g. PayPal, Wire Transfer' name='paymentTerms' value=(undefined===product ? '' : product.paymentTerms))
+
+    div.form-group
+      label(for='export') Export Market:
+      input#export.form-control(type='text', placeholder='e.g. Europe, Americas' name='export' value=(undefined===product ? '' : product.export))
+
+    div.form-group
+      label(for='domestic') Domestic Market:
+      input#domestic.form-control(type='text', placeholder='e.g. All over India' name='domestic' value=(undefined===product ? '' : product.domestic))
+
+    div.form-group
+      label(for='supply') Supply Ability:
+      input#supply.form-control(type='text', placeholder='e.g. 10 per day' name='supply' value=(undefined===product ? '' : product.supply))
+
+    div.form-group
+      label(for='deliveryTime') Delivery Time:
+      input#deliveryTime.form-control(type='text', placeholder='e.g. 1 week' name='deliveryTime' value=(undefined===product ? '' : product.deliveryTime))
+
+    div.form-group
+      label(for='description') Description:
+      textarea#description.form-control(type='textarea', placeholder='description ...' name='description' rows="5" cols="50") #{undefined===product ? '' : product.description}
+
+    div.form-group
+      label(for='image') Image link:
+      input#image.form-control(type='text', placeholder='image link' name='image' value=(undefined===product ? '' : product.image))
+
+    div.form-group
+      label Sub-Category:
+      div
+        for subCategory in subCategories
+          div(style='display: inline; padding-right:10px;')
+            input.radio-input(type='radio', name='subCategory', id=subCategory._id, value=subCategory._id,)
+            label(for=subCategory._id) #{subCategory.name}
+
+    div.form-group
+      label(for='password') Password:
+      input#password.form-control(type='password' name='password')
+    
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+   ul
+    for error in errors
+     li!= error.msg
