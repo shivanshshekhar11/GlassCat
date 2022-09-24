@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+  h1 Contact Us
+
+  form(method='POST' action='')
+
+    div.form-group
+      label(for='body') Describe Your BUYING Requirement in Detail:
+      textarea#body.form-control(type='textarea', placeholder='Tips on getting accurate quotes. Please include product name, order quantity, usage, special requests if any in your inquiry.' required="true" name='description' rows="5" cols="50") #{undefined===mail ? '' : mail.body}
+
+    div.form-group
+      label(for='email') Email:
+      input#email.form-control(type='email', placeholder='cutiebun7056@polar.com' name='email' required='true' value=(undefined===mail ? '' : mail.email) )
+
+    div.form-group
+      label(for='phone') Phone Number:
+      input#phone.form-control(type='tel', name='phone' required='true' value=(undefined===mail ? '' : mail.phone))
+
+    button.btn.btn-primary(type='submit') Submit

@@ -12,21 +12,20 @@ html
       form#search(method='POST' action='/search')
 
         div.form-group
-          label(for='searchInput') Input:
           input#searchInput.form-control(type='text' name='searchInput' placeholder='Enter search term')
     
-        button.btn.btn-primary(type='submit') Submit
+        button.btn.btn-primary(type='submit') Search
 
     nav 
-      ul
+      ul#navList
         li
-          a(href='/') Home
+          a.navlink(href='/') Home
         li
-          a(href='/about') Company Profile
+          a.navlink(href='/about') Company Profile
         li
-          a(href='/categories') Our Products
+          a.navlink(href='/categories') Our Products
         li
-          a(href='/contact') Contact Us
+          a.navlink(href='/contact') Contact Us
 
     block content
 

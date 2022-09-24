@@ -1,24 +1,25 @@
 extends layout
 
 block content
-  h1= title
+  div#about
+    h1= title
 
-  h3 The inventory has the following record counts ...
+    h3 The inventory has the following record counts ...
 
-  if error
-    p Error getting dynamic content.
-  else
+    if error
+      p Error getting dynamic content.
+    else
 
-    ul#count
-      li.count Categories: !{data.cat_count}
-      li.count Sub-Categories: !{data.subcat_count}
-      li.count Products: !{data.prod_count}
+      ul#count
+        li.count Categories: !{data.cat_count}
+        li.count Sub-Categories: !{data.subcat_count}
+        li.count Products: !{data.prod_count}
 
-    p 
-      a(href="/admin/category") Enter a new category
+      p 
+        a(href="/admin/category") Enter a new category
 
-    p 
-      a(href="/admin/sub-category") Enter a new sub-category
+      p 
+        a(href="/admin/sub-category") Enter a new sub-category
 
-    p 
-      a(href="/admin/product") Enter a new product
+      p 
+        a(href="/admin/product") Enter a new product

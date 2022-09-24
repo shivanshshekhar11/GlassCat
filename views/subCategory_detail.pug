@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  div#about
+    h1= title
+
+    h3 #{subCategory.name}
+
+    p #{subCategory.description}
+
+  ul#grid
+    each product in Products
+        li.grid-items
+          img.product-image(src=product.image)
+
+          p.product-name
+            a(href=product.url) #{product.name}
+
+          p.product-price #{undefined===product.price ? "Price on request" : product.price}
+
+    else
+      p This category has no products

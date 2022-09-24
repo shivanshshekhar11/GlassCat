@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1 Product Details
+  h3 #{product.name}
+  
+  div#det
+    img#image(src=product.image)
+
+    div#dcard
+      p #[strong Price: ] #{undefined===product.price?'-':product.price}
+      p #[strong Minimum Order Quantity: ] #{undefined===product.minOrder?'-':product.minOrder}
+      p #[strong Technology: ] #{undefined===product.technology?'-':product.technology}
+      p #[strong Material: ] #{undefined===product.material?'-':product.material}
+      p #[strong Weight: ] #{undefined===product.weight?'-':product.weight}
+      p #[strong Driven Method: ] #{undefined===product.drivenMethod?'-':product.drivenMethod}
+
+
+  div#trade
+    p #[strong Payment Terms: ] #{undefined===product.paymentTerms?'-':product.paymentTerms}
+    p #[strong Export market: ] #{undefined===product.export?'-':product.export}
+    p #[strong Domestic Market: ] #{undefined===product.domestic?'-':product.domestic}
+    p #[strong Supply in units per day: ] #{undefined===product.supply?'-':product.supply}
+    p #[strong Delivery Time: ] #{undefined===product.delivery?'-':product.delivery}
+
+  p#desc #{undefined===product.description?'-':product.description}

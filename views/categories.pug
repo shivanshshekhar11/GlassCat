@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+  div#about
+    h1 Product Categories
+
+    ul#cat-list
+      each category in categories
+        li.list-items
+
+          p.cat-name #{category.name}
+
+          ul.subcat-list
+              each subCategory in subCategories
+                  if subCategory.category.name === category.name
+                      li.sublist-items
+                        a(href=subCategory.url) #{subCategory.name}
+
+      else
+        li There are no Categories.

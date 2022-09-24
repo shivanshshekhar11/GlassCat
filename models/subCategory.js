@@ -11,7 +11,7 @@ var subCategorySchema = new Schema(
 );
 
 subCategorySchema.virtual("url").get(function(){
-    return "/categories"+this.urlstring;
+    return "/categories/"+this.urlstring;
 });
 
 module.exports = mongoose.model("SubCategory", subCategorySchema);
