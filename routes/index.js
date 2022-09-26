@@ -66,8 +66,19 @@ router.get('/categories/:urlstring', function(req, res, next) {
 router.get('/products/:id', function(req, res, next) {
   Product.findById(req.params.id)
   .exec(function (err, product) {
-    if (err) { return next(err); }
-    res.render('product_detail', { title: 'Asha Scientific Works', product: product });
+
+    Product.find({subCategory: product.subCategory})
+    .exec(function (err, list_products) {
+      if (err) { return next(err); }
+      //Successful, so render
+      if(list_products.length > 4){
+        list_products = list_products.slice(0,4);
+        res.render('product_detail', { title: 'Asha Scientific Works', products: list_products, product: product });
+      }
+      else{
+        res.render('product_detail', { title: 'Asha Scientific Works', products: list_products, product: product });
+      }
+    });
   });
 });
 

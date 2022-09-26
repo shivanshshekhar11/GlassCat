@@ -3,6 +3,8 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    script(src="https://kit.fontawesome.com/2886b68951.js" crossorigin="anonymous")
   body
     header
       #company
@@ -30,19 +32,19 @@ html
     block content
 
     footer
-      #addr 
+      #addr
         a(href='#')
-          i.fa.fa-arrow-up(aria-hidden='true')
+          img.icon(src="/images/add.png")
         p#addrText Address
 
       #phone 
         a(href='#')
-          i.fa.fa-arrow-up(aria-hidden='true')
+          img.icon(src="/images/phn.png")
         p#phoneText 041170
 
       #owner 
         a(href='#')
-          i.fa.fa-arrow-up(aria-hidden='true')
+          img.icon(src="/images/own.png")
         p#ownerText Mr. John Doe
         p#ownerphone 0242319
 

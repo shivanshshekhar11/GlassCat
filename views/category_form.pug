@@ -1,28 +1,29 @@
 extends layout
 
 block content
-  h1 #{title}
+  div#about
+    h1 #{title}
 
-  form(method='POST' action='')
-    div.form-group
-      label(for='name') Name:
-      input#name.form-control(type='text', placeholder='e.g. Engineering Equipment' name='name' value=(undefined===category ? '' : category.name))
+    form(method='POST' action='')
+      div.form-group
+        label(for='name') Name:
+        input#name.form-control(type='text', placeholder='e.g. Engineering Equipment' name='name' value=(undefined===category ? '' : category.name))
 
-    div.form-group
-      label(for='description') Description:
-      textarea#description.form-control(type='textarea', placeholder='description ...' name='description' rows="5" cols="50") #{undefined===category ? '' : category.description}
+      div.form-group
+        label(for='description') Description:
+        textarea#description.form-control(type='textarea', placeholder='description ...' name='description' rows="5" cols="50") #{undefined===category ? '' : category.description}
 
-    div.form-group
-      label(for='urlstring') urlstring:
-      input#urlstring.form-control(type='text', placeholder='e.g. engineering-equipment' name='urlstring' value=(undefined===category ? '' : category.urlstring))
+      div.form-group
+        label(for='urlstring') urlstring:
+        input#urlstring.form-control(type='text', placeholder='e.g. engineering-equipment' name='urlstring' value=(undefined===category ? '' : category.urlstring))
 
-    div.form-group
-      label(for='password') Password:
-      input#password.form-control(type='password' name='password')
-    
-    button.btn.btn-primary(type='submit') Submit
+      div.form-group
+        label(for='password') Password:
+        input#password.form-control(type='password' name='password')
+      
+      button#submit-button.btn.btn-primary(type='submit') Submit
 
-  if errors
-   ul
-    for error in errors
-     li!= error.msg
+    if errors
+      ul
+        for error in errors
+          li!= error.msg

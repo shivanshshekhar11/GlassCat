@@ -8,15 +8,27 @@ block content
 
     p #{subCategory.description}
 
-  ul#grid
+  ul#product-list
     each product in Products
-        li.grid-items
-          img.product-image(src=product.image)
+        li.category-items
 
-          p.product-name
-            a(href=product.url) #{product.name}
+          img.subImage(src=product.image)
 
-          p.product-price #{undefined===product.price ? "Price on request" : product.price}
+          div.subDcard
+            h3.product-name
+              a(href=product.url) #{product.name}
+
+            #subDetails 
+              #subDetails1
+                p #[strong Price: ] #{undefined===product.price?'-':product.price}
+                p #[strong Minimum Order Quantity: ] #{undefined===product.minOrder?'-':product.minOrder}
+                p #[strong Material: ] #{undefined===product.material?'-':product.material}
+                p #[strong Weight: ] #{undefined===product.weight?'-':product.weight}
+
+              #subDetails2
+                p #[strong Payment Terms: ] #{undefined===product.paymentTerms?'-':product.paymentTerms}
+                p #[strong Supply in units per day: ] #{undefined===product.supply?'-':product.supply}
+                p #[strong Delivery Time: ] #{undefined===product.delivery?'-':product.delivery}
 
     else
       p This category has no products

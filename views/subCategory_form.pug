@@ -1,36 +1,37 @@
 extends layout
 
 block content
-  h1 #{title}
+  div#about
+    h1 #{title}
 
-  form(method='POST' action='')
-    div.form-group
-      label(for='name') Name:
-      input#name.form-control(type='text', placeholder='e.g. Heat Transfer Lab' name='name' value=(undefined===subCategory ? '' : subCategory.name))
+    form(method='POST' action='')
+      div.form-group
+        label(for='name') Name:
+        input#name.form-control(type='text', placeholder='e.g. Heat Transfer Lab' name='name' value=(undefined===subCategory ? '' : subCategory.name))
 
-    div.form-group
-      label(for='description') Description:
-      textarea#description.form-control(type='textarea', placeholder='description ...' name='description' rows="5" cols="50") #{undefined===subCategory ? '' : subCategory.description}
+      div.form-group
+        label(for='description') Description:
+        textarea#description.form-control(type='textarea', placeholder='description ...' name='description' rows="5" cols="50") #{undefined===subCategory ? '' : subCategory.description}
 
-    div.form-group
-      label(for='urlstring') urlstring:
-      input#urlstring.form-control(type='text', placeholder='e.g. heat-transfer-lab' name='urlstring' value=(undefined===subCategory ? '' : subCategory.urlstring))
+      div.form-group
+        label(for='urlstring') urlstring:
+        input#urlstring.form-control(type='text', placeholder='e.g. heat-transfer-lab' name='urlstring' value=(undefined===subCategory ? '' : subCategory.urlstring))
 
-    div.form-group
-      label Category:
-      div
-        for category in categories
-          div(style='display: inline; padding-right:10px;')
-            input.radio-input(type='radio', name='category', id=category._id, value=category._id,)
-            label(for=category._id) #{category.name}
+      div.form-group
+        label Category:
+        div
+          for category in categories
+            div(style='display: inline; padding-right:10px;')
+              input.radio-input(type='radio', name='category', id=category._id, value=category._id,)
+              label(for=category._id) #{category.name}
 
-    div.form-group
-      label(for='password') Password:
-      input#password.form-control(type='password' name='password')
-    
-    button.btn.btn-primary(type='submit') Submit
+      div.form-group
+        label(for='password') Password:
+        input#password.form-control(type='password' name='password')
+      
+      button#submit-button.btn.btn-primary(type='submit') Submit
 
-  if errors
-   ul
-    for error in errors
-     li!= error.msg
+    if errors
+      ul
+        for error in errors
+          li!= error.msg

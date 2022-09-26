@@ -54,9 +54,8 @@ nav{
     margin:0 57.5% 0 2.5%;
 }
 
-h1{
+h1,h3{
     text-align: center;
-    margin-bottom: 2em;
 }
 
 #about,#contact{
@@ -65,8 +64,8 @@ h1{
     color: white;
 }
 
-#contact-button{
-    width:10%;
+#contact-button,#submit-button{
+    width:20%;
     margin:auto;
     display: block;
     margin: 1em 45% 1em 45%;
@@ -76,31 +75,153 @@ h1{
     color: black;
     transition: 0.5s;
     cursor: pointer
-  }
+}
   
-  #contact-button:hover{
+#contact-button:hover,#submit-button:hover{
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     transform: scale(1.05);
     transition: transform 0.5s;
-  }
+}
   
-  #contact-button:active{
+#contact-button:active,#submit-button:active{
     transform: scale(0.95);
     transition: transform 0.25s;
-  }
+}
 
-  #grid {
+#products{
+    background-color: darkslateblue;
+    color: white;
+}
+
+#sign{
+    margin: 0;
+    padding:2em;
+}
+
+#grid {
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
     gap: 4% 5%;
     padding: 2em;
     margin:0;
     list-style: none;
-    background-color: darkslateblue;
-    color: white;
-  }
+}
 
-  .product-image{
+.product-image{
     width:230px;
     height: 260px;
-  }
+}
+
+input, textarea{
+    width:100%;
+    margin-bottom: 1.5em;
+    margin-top: 0.5em;
+    padding:0.5em;
+    border-radius: 0.5em;
+}
+  
+form{
+    width:40%;
+    margin:auto;
+    text-align: left;
+}
+
+.radio-input{
+    width:5%;
+    margin:1em 0 1em 0;
+}
+
+#searchInput{
+    width:auto;
+    margin:0;
+    margin-right: 1em;
+}
+
+#search{
+    width: auto;
+    text-align: initial;
+}
+
+#product-list{
+    padding: 2em;
+    margin:0;
+    list-style: none;
+    background-color: darkslateblue;
+    color: white;
+}
+
+.category-items{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.subImage{
+    width:20%;
+    height: 200px;
+}
+
+.subDcard{
+    width:60%;
+}
+
+#subDetails,#admin-nav{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#count{
+    padding:2em;
+}
+
+#subDetails1,#subDetails2{
+    width: 40%;
+}
+
+#det{
+    display: flex;
+    width: 100%;
+    margin-bottom: 3em;
+}
+
+#dcard{
+    width: 50%;
+}
+
+#image{
+    width: 30%;
+    margin-right: 10%;
+}
+
+#tagline{
+    display:flex;
+    justify-content: space-evenly;
+    background-color: brown;
+    color:white;
+    padding: 2em 0 2em 0;
+}
+
+#tag-image{
+    width: 40%;
+    height: 400px;
+}
+
+#tag-grid{
+    width:40%;
+    display:grid;
+    grid-template-columns: 45% 45%;
+    gap:10% 10%;
+}
+
+.tag-items{
+    background-color: darkblue;
+    padding:1em;
+}
+
+#cat-list{
+    display:grid;
+    grid-template-columns: 27% 27% 27%;
+    gap:9.5% 9.5%;
+}
