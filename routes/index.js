@@ -27,12 +27,12 @@ router.get('/', function(req, res, next) {
 
 /* GET company profile page. */
 router.get('/about', function(req, res, next) {
-  res.render('about', { title: 'Asha Scientific Works' });
+  res.render('about', { title: 'Company profile' });
 });
 
 /* GET company contact page. */
 router.get('/contact', function(req, res, next) {
-  res.render('contact', { title: 'Asha Scientific Works' });
+  res.render('contact', { title: 'Contact Us' });
 });
 
 /* GET catalogue page. */
@@ -44,7 +44,7 @@ router.get('/categories', function(req, res, next) {
       .populate('category')
       .exec(function (err, subCategories) {
         if (err) { return next(err); }
-        res.render('categories', { title: 'Asha Scientific Works', categories: categories, subCategories: subCategories });
+        res.render('categories', { title: 'Our Catalogue', categories: categories, subCategories: subCategories });
       });
   });
 });
@@ -57,7 +57,7 @@ router.get('/categories/:url', function(req, res, next) {
       Product.find({subCategory: subCategory._id})
       .exec(function (err, Products) {
         if (err) { return next(err); }
-        res.render('subCategory_detail', { title: 'Asha Scientific Works', subCategory: subCategory, Products: Products });
+        res.render('subCategory_detail', { title: subCategory.name, subCategory: subCategory, Products: Products });
       });
   });
 });
@@ -76,7 +76,7 @@ router.get('/products/:id', function(req, res, next) {
         res.render('product_detail', { title: 'Asha Scientific Works', products: list_products, product: product });
       }
       else{
-        res.render('product_detail', { title: 'Asha Scientific Works', products: list_products, product: product });
+        res.render('product_detail', { title: product.name, products: list_products, product: product });
       }
     });
   });

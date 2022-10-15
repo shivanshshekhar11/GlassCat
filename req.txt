@@ -3,3 +3,5 @@ additional product specific categories can be added in description, which will h
 google maps API
 
 search functionality
+
+product form will have dynamic sub-category selection
