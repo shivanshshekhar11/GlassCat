@@ -18,12 +18,16 @@
 }
 
 .pad2{
-    padding: 20px 80px;
+    padding: 40px 80px;
 }
 
 a{
     text-decoration:none;
     color:skyblue;
+}
+
+h1,h3{
+    text-align: center;
 }
 
 /* header */
@@ -95,6 +99,75 @@ nav{
     bottom: -5px;
     left: 0px;
 }
+
+/* index  */
+#about,#contact{
+    background-color: rgb(18, 18, 18);
+    color: #fff;
+}
+
+#about h1{
+    padding-bottom: 10px;
+}
+
+#about h1 span{
+    color: var(--light);
+}
+
+#about p{
+    font-size: 17px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+#client{
+    background:linear-gradient(rgba(19, 41, 61, 0.8),rgba(19, 41, 61, 0.8)),url(../images/microscope-biotechnology-laboratory1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    align-items: center;
+    position: relative;
+    padding: 80px;
+}
+
+#client-counter{
+    justify-content: space-between;
+}
+
+#client-counter .tag-items{
+    color: #fff;
+    width: 24%;
+    padding: 30px 20px 20px;
+    background-color: var(--main);
+    border-radius: 5px;
+    line-height: 1.5;
+    /* box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3); */
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    transition: 0.5s;
+    box-shadow: rgb(19, 41, 61) 3px 3px 6px 0px inset, rgba(19, 41, 61, 0.5) -3px -3px 6px 1px inset;
+}
+
+#client-counter .tag-items h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#client-counter .tag-items span{
+    color: #3a9add;
+}
+
+#client-counter .tag-items:hover{
+    background-color: var(--light);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+}
+
+#client-counter .tag-items:hover span{
+    color: var(--main);
+}
+
+
+
 
 /* Footer */
 
@@ -168,15 +241,9 @@ footer .copyright{
 }
 
 
-h1,h3{
-    text-align: center;
-}
 
-#about,#contact{
-    padding:3em 10em 3em 10em;
-    background-color: maroon;
-    color: white;
-}
+
+
 
 #contact-button,#submit-button{
     width:20%;
@@ -309,30 +376,7 @@ form{
     margin-right: 10%;
 }
 
-#tagline{
-    display:flex;
-    justify-content: space-evenly;
-    background-color: brown;
-    color:white;
-    padding: 2em 0 2em 0;
-}
 
-#tag-image{
-    width: 40%;
-    height: 400px;
-}
-
-#tag-grid{
-    width:40%;
-    display:grid;
-    grid-template-columns: 45% 45%;
-    gap:10% 10%;
-}
-
-.tag-items{
-    background-color: darkblue;
-    padding:1em;
-}
 
 #cat-list{
     display:grid;
