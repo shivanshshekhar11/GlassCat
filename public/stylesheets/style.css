@@ -1,5 +1,24 @@
-body{
+:root{
+    --main:#13293d;
+    --light:#3e92cc;
+}
+*{
     margin:0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.pad{
+    padding: 0 80px;
+}
+
+.pad2{
+    padding: 20px 80px;
 }
 
 a{
@@ -7,16 +26,15 @@ a{
     color:skyblue;
 }
 
-header,footer{
+/* header */
+
+header{
     display:flex;
     justify-content:space-between;
-    background-color: black;
-    color: white;
-    padding: 1em;
-}
-
-footer{
-    justify-content: space-evenly;
+    align-items: center;
+    background-color: #13293d;
+    color: #fff;
+    padding: 30px 80px;
 }
 
 #company, #search{
@@ -35,24 +53,120 @@ footer{
     font-weight:600;
 }
 
-nav{
-    background-color: midnightblue;
-    color: white;
-}
+/* nav */
 
-.navlink{
-    text-decoration: none;
-    color: white;
+nav{
+    background-color: var(--light);
+    padding: 10px 80px;
 }
 
 #navList{
     display:flex;
     list-style:none;
-    justify-content: space-between;
-    padding: 0.5em 1em 0.5em 1em;
-    width: 40%;
-    margin:0 57.5% 0 2.5%;
+    justify-content: flex-end;
+    align-items: center;
 }
+
+#navList li:last-child{
+    margin-right: 0;
+}
+
+#navList li{
+    margin-right: 60px;
+    position: relative;
+}
+
+.navlink{
+    text-decoration: none;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.navlink:hover{
+    color: var(--main);
+}
+
+#navList li a:hover::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: var(--main);
+    position: absolute;
+    bottom: -5px;
+    left: 0px;
+}
+
+/* Footer */
+
+
+footer{
+    color: #fff;
+    background-color: var(--main);
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
+
+footer .col{
+    width: 31%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    /* border: 1px solid #000; */
+
+}
+
+footer .col .first{
+    width:35%;
+    margin: 0 auto;
+}
+
+footer .col .second{
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    margin-left: 70%;
+   
+}
+footer .col:nth-of-type(3){
+    margin-right: 0;
+}
+
+footer h4{
+    font-size: 17px;
+    padding-bottom: 20px;
+
+}
+
+footer p{
+    font-size: 15px;
+    margin: 0 0 8px 0;
+}
+
+footer a{
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+footer .icons a i{
+    padding-right: 10px;
+}
+
+footer a:hover,
+footer .follow i:hover{
+  color:var(--light);
+}
+
+footer .copyright{
+    width: 100%;
+    padding-top:10px;
+    text-align: center;
+    border-top:1px solid #fff;
+}
+
 
 h1,h3{
     text-align: center;
