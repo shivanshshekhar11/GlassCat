@@ -38,7 +38,6 @@ router.post('/category',  [
   // Validate and sanitize fields.
   body('name', 'Category name required').trim().isLength({ min: 1 }),
   body('description', 'Description required').trim().isLength({ min: 1 }),
-  body('urlstring', 'urlstring required').trim().isLength({ min: 1 }),
 
   // Process request after validation and sanitization.
   (req, res, next) => {
@@ -47,7 +46,6 @@ router.post('/category',  [
     var category = new Category(
         { name: req.body.name,
           description: req.body.description,
-          urlstring: req.body.urlstring
         }
     );
 
@@ -110,7 +108,6 @@ router.post('/sub-category',  [
   // Validate and sanitize fields.
   body('name', 'Sub-Category name required').trim().isLength({ min: 1 }),
   body('description', 'Description required').trim().isLength({ min: 1 }),
-  body('urlstring', 'urlstring required').trim().isLength({ min: 1 }),
 
   // Process request after validation and sanitization.
   (req, res, next) => {
@@ -125,8 +122,7 @@ router.post('/sub-category',  [
       var subCategory = new SubCategory(
           { name: req.body.name,
             description: req.body.description,
-            category: req.body.category,
-            urlstring: req.body.urlstring
+            category: req.body.category
           }
       );
 
@@ -176,15 +172,13 @@ router.post('/product',  [
   // Validate and sanitize fields.
   body('name', 'Product name required').trim().isLength({ min: 1 }),
   body('price').trim(),
+  body('model_no').trim(),
+  body('make').trim(),
   body('minOrder', 'Minimum order quantity required').trim().isLength({ min: 1 }),
-  body('technology').trim(),
   body('material').trim(),
-  body('weight', 'Weight required').trim().isLength({ min: 1 }),
-  body('drivenMethod').trim(),
   body('paymentTerms', 'Payment terms required').trim().isLength({ min: 1 }),
   body('export').trim(),
   body('domestic').trim(),
-  body('supply', 'Supply time required').trim().isLength({ min: 1 }),
   body('deliveryTime', 'Delivery time required').trim().isLength({ min: 1 }),
   body('description', 'Description required').trim().isLength({ min: 1 }),
   body('image', 'Image link required').trim().isLength({ min: 1 }),
@@ -202,15 +196,13 @@ router.post('/product',  [
       var product = new Product(
           { name: req.body.name,
             price: req.body.price,
+            model_no: req.body.model_no,
+            make: req.body.make,
             minOrder: req.body.minOrder,
-            technology: req.body.technology,
             material: req.body.material,
-            weight: req.body.weight,
-            drivenMethod: req.body.drivenMethod,
             paymentTerms: req.body.paymentTerms,
             export: req.body.export,
             domestic: req.body.domestic,
-            supply: req.body.supply,
             deliveryTime: req.body.deliveryTime,
             description: req.body.description,
             image: req.body.image,

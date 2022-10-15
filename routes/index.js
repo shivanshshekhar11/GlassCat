@@ -49,9 +49,9 @@ router.get('/categories', function(req, res, next) {
   });
 });
 
-/* GET catagory page. */
-router.get('/categories/:urlstring', function(req, res, next) {
-  SubCategory.findOne({urlstring: req.params.urlstring})
+/* GET sub-catagory page. */
+router.get('/categories/:url', function(req, res, next) {
+  SubCategory.findOne({url: req.params.url})
   .exec(function (err, subCategory) {
     if (err) { return next(err); }
       Product.find({subCategory: subCategory._id})

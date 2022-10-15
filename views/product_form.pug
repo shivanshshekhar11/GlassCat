@@ -14,24 +14,20 @@ block content
         input#price.form-control(type='text', placeholder='e.g. 10000000' name='price' value=(undefined===product ? '' : product.price))
 
       div.form-group
+        label(for='make') Make/Company:
+        input#make.form-control(type='text', placeholder='enter comapny name' name='make' value=(undefined===product ? '' : product.make))
+
+      div.form-group
+        label(for='model_no') Model number:
+        input#model_no.form-control(type='text', placeholder='enter model number' name='model_no' value=(undefined===product ? '' : product.model_no))
+
+      div.form-group
         label(for='minOrder') Minimum Order:
         input#minOrder.form-control(type='text', placeholder='e.g. 1' name='minOrder' value=(undefined===product ? '' : product.minOrder))
 
       div.form-group
-        label(for='technology') Technology:
-        input#technology.form-control(type='text', placeholder='e.g. LASER' name='technology' value=(undefined===product ? '' : product.technology))
-
-      div.form-group
         label(for='material') Material:
         input#material.form-control(type='text', placeholder='e.g. Wood' name='material' value=(undefined===product ? '' : product.material))
-
-      div.form-group
-        label(for='weight') Weight:
-        input#weight.form-control(type='text', placeholder='e.g. 10 KG' name='weight' value=(undefined===product ? '' : product.weight))
-
-      div.form-group
-        label(for='drivenMethod') Driven Method:
-        input#drivenMethod.form-control(type='text', placeholder='e.g. Automatic' name='drivenMethod' value=(undefined===product ? '' : product.drivenMethod))
 
       div.form-group
         label(for='paymentTerms') Payment Terms:
@@ -44,10 +40,6 @@ block content
       div.form-group
         label(for='domestic') Domestic Market:
         input#domestic.form-control(type='text', placeholder='e.g. All over India' name='domestic' value=(undefined===product ? '' : product.domestic))
-
-      div.form-group
-        label(for='supply') Supply Ability:
-        input#supply.form-control(type='text', placeholder='e.g. 10 per day' name='supply' value=(undefined===product ? '' : product.supply))
 
       div.form-group
         label(for='deliveryTime') Delivery Time:

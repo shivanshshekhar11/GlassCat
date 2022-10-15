@@ -23,12 +23,10 @@ block content
                 p #[strong Price: ] #{undefined===product.price?'-':product.price}
                 p #[strong Minimum Order Quantity: ] #{undefined===product.minOrder?'-':product.minOrder}
                 p #[strong Material: ] #{undefined===product.material?'-':product.material}
-                p #[strong Weight: ] #{undefined===product.weight?'-':product.weight}
 
               #subDetails2
                 p #[strong Payment Terms: ] #{undefined===product.paymentTerms?'-':product.paymentTerms}
-                p #[strong Supply in units per day: ] #{undefined===product.supply?'-':product.supply}
-                p #[strong Delivery Time: ] #{undefined===product.delivery?'-':product.delivery}
+                p #[strong Delivery Time: ] #{undefined===product.deliveryTime?'-':product.deliveryTime}
 
     else
       p This category has no products

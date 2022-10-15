@@ -1,0 +1,5 @@
+additional product specific categories can be added in description, which will have a word processor API.
+
+google maps API
+
+search functionality
