@@ -41,7 +41,7 @@ header{
     padding: 40px 80px;
 }
 
-#company, #search{
+#company{
     display:flex;
     align-items:center;
     margin-left: 2.5%;
@@ -329,11 +329,11 @@ textarea{
     border-radius: 0.5em;
 }
   
-form{
+/* form{
     width:40%;
     margin:auto;
     text-align: left;
-}
+} */
 
 .radio-input{
     width:5%;
