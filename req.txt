@@ -1,7 +1,10 @@
-additional product specific categories can be added in description, which will have a word processor API.
-
 google maps API
 
 search functionality
 
-product form will have dynamic sub-category selection
+contact us form data to mail
+
+product page won't have same product in related products
+
+product form will have a search radio for subcategory selection **
+(for subcategory form also)

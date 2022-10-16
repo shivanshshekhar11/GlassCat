@@ -5,7 +5,7 @@ block content
 
     h1 #{subCategory.name}
 
-    p #{subCategory.description}
+    p!= subCategory.description
 
   ul#product-list
     each product in Products

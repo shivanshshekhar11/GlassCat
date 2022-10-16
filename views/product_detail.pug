@@ -22,7 +22,7 @@ block content
       p #[strong Domestic Market: ] #{undefined===product.domestic?'-':product.domestic}
       p #[strong Delivery Time: ] #{undefined===product.deliveryTime?'-':product.deliveryTime}
 
-    p#desc #{undefined===product.description?'-':product.description}
+    p#desc!= undefined===product.description?'-':product.description
 
   #products
     p#sign Related Products 
