@@ -41,24 +41,86 @@ block content
           span Countries
         p Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ex odio nihil aliquam quo numquam reprehenderit, illum sit magnam dolorum quisquam pariatur, sint repellendus impedit nemo molestiae deleniti autem maiores?
 
-  #products 
-    p#sign Products
-    ul#grid
+  #products.pad2
+    h2 Products
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, repellendus!
+    div#product-container.d-flex
       each product in products
-        li.grid-items
-          img.product-image(src=product.image)
+        div.product
+          .product-image
+            img(src=product.image)
 
-          p.product-name
-            a(href=product.url) #{product.name}
+          div.product-name
+           h3
+             a(href=product.url) #{product.name}
+
+        div.product
+          .product-image
+            img(src=product.image)
+
+          div.product-name
+            h3
+              a(href=product.url) #{product.name}
+
+        div.product
+          .product-image
+            img(src=product.image)
+
+          div.product-name
+            h3
+              a(href=product.url) #{product.name}
+
+        div.product
+          .product-image
+            img(src=product.image)
+
+          div.product-name
+            h3
+              a(href=product.url) #{product.name}
+
+        div.product
+          .product-image
+            img(src=product.image)
+
+          div.product-name
+            h3
+              a(href=product.url) #{product.name}
+
+        div.product
+          .product-image
+            img(src=product.image)
+
+          div.product-name
+            h3
+              a(href=product.url) #{product.name}
+
+        div.product
+          .product-image
+            img(src=product.image)
+
+          div.product-name
+            h3
+              a(href=product.url) #{product.name}
+
+        div.product
+          .product-image
+            img(src=product.image)
+
+          div.product-name
+            h3
+              a(href=product.url) #{product.name}
+
 
       else
         p This category has no products
 
-  #contact 
-    p Tell us what you think about our products and services. We would love to hear from you. If you have any questions about placing orders or any other stuff, please feel free to contact us. We will be happy to answer your questions.
+  #contact.pad2.d-flex
+    #contact-des
+      p Tell us what you think about our products and services. We would love to hear from you. If you have any questions about placing orders or any other stuff, please feel free to contact us. We will be happy to answer your questions.
 
-    button#contact-button(type='button' disabled=true)
-      a.navlink(href="/contact") Contact Us 
+    #contact-btn.d-flex
+      button#contact-button(type='button' disabled=true)
+        a(href="/contact") Contact Us 
 
   #map 
     p INSERT MAP HERE 
