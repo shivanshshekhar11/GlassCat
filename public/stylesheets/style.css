@@ -139,6 +139,7 @@ nav{
 }
 
 #about h1 span{
+    font-size: 40px;
     color: var(--light);
 }
 
@@ -310,6 +311,65 @@ nav{
     transition: transform 0.25s;
 }
 
+/* Company Profile */
+
+#company-pro h1{
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+#company-pro h1 span{
+    color: var(--main);
+}
+
+#company-pro #com-des{
+    font-size: 18px;
+    text-align: justify;
+    line-height: 20px;
+}
+
+#business-details{
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+  
+#business-details td{
+    width: 25%;
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+/* #business-details tr:nth-child(even){
+    background-color: var(--light);
+    color: var(--main);   
+} */
+  
+#business-details tr:nth-child(odd){
+    background-color: var(--main);
+    color: var(--light);
+}
+  
+#business-details tr:hover {
+    color: var(--light);
+    background-color: var(--main);
+}
+
+#certificates{
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#certificates .certificate{
+    width: 18%;
+    margin:0 20px 20px 0;
+}
+
+#certificates .certificate img{
+    width: 100%;
+}
+  
 
 /* Footer */
 
