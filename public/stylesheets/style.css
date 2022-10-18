@@ -461,6 +461,7 @@ nav{
     border-bottom: 1px solid #333;
     outline: none;
     resize: none;
+    color: var(--main);
 }
 
 .contact-form .input-box span{
