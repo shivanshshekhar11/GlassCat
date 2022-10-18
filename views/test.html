@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+
+    .contact {
+        position: relative;
+        height: 100vh;
+        padding: 40px 80px;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        flex-direction: column;
+        background: #222;
+    }
+
+    .contact .content {
+        max-width: 800px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .contact .content h2 {
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    .contact-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .contact-container .contact-info {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-container .contact-info .box {
+        position: relative;
+        padding: 20px 0;
+        display: flex;
+    }
+
+    .contact-container .contact-info .box .icon{
+        min-width: 60px;
+        height: 60px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-size: 22px;
+    }
+
+    .contact-container .contact-info .box .text{
+        display: flex;
+        margin-left: 20px;
+        font-size: 16px;
+        color: #fff;
+        flex-direction: column;
+        font-weight: bold;
+    }
+
+    .contact-container .contact-info .box .text h3{
+        font-weight: bold;
+        color:blue;
+    }
+
+    .contact-form{
+        width: 40%;
+        padding: 40px;
+        background-color: #fff;
+    }
+
+    .contact-form h3{
+        font-size: 30px;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .contact-form .input-box{
+        width: 100%;
+        position: relative;
+        margin-top: 10px;
+    }
+
+    .contact-form .input-box input,
+    .contact-form .input-box textarea{
+        width: 100%;
+        font-size: 16px;
+        padding: 5px 10px;
+        margin: 10px 0;
+        border: none;
+        border-bottom: 1px solid #333;
+        outline: none;
+        resize: none;
+    }
+
+    .contact-form .input-box span{
+        position: absolute;
+        left: 0;
+        font-size: 16px;
+        padding: 5px 10px;
+        margin: 10px 0;
+        pointer-events: none;
+        color: #666;
+        transition: 0.5s;
+    }
+    .contact-form .input-box input:focus ~ span,
+    .contact-form .input-box input:valid ~ span,
+    .contact-form .input-box textarea:focus ~ span,
+    .contact-form .input-box textarea:valid ~ span{
+        color: red;
+        font-size: 12px;
+        transform: translateY(-20px);
+    }
+
+    .contact-form .input-box input[type="submit"]{
+        width: 100px;
+        background: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        transform: scale(1);
+        transition: 0.5s;
+    }
+
+    .contact-form .input-box input[type="submit"]:hover{
+        transform: scale(1.1);
+    }
+
+    .contact-form .input-box input[type="submit"]:active{
+        transform: scale(0.90);
+    }
+    
+</style>
+
+<body>
+
+
+    <section class="contact">
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos hic eos qui illum ad repellendus
+                libero nulla quia natus culpa?</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="box">
+                    <div class="icon"><i class="fa fa-map-marker"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>566 Wellington Road, Street 32, San Francisco</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-phone"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>+01 222 365 /(+91) 01 2345 6745</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-envelope-o"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>ex@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form action="">
+                    <h2>Send Message</h2>
+                    <div class="input-box">
+                        <input type="text" name="" required="true" placeholder="" aria-label="full-name"/>
+                        <span>Full Name</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="" required="true" placeholder="" aria-label="email"/>
+                        <span>Email</span>
+                    </div>
+                    <div class="input-box">
+                        <textarea name="" id="" required="true" aria-label="text"></textarea>
+                        <span>Type Your Message</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" name="" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
