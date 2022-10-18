@@ -22,3 +22,28 @@ block content
         input#phone.form-control(type='tel', name='phone' required='true' value=(undefined===mail ? '' : mail.phone))
 
       button#submit-button.btn.btn-primary(type='submit') Submit
+
+    if error 
+      div.alert.alert-danger #{error}
+
+  script.
+    $('form').on('submit', (e) => {
+      // e.preventDefault();
+
+      const name = $('#name').val().trim();
+      const email = $('#from-email').val().trim();
+      const subject = $('#subject').val().trim();
+      const text = $('#text').val().trim();
+
+      const data = {
+        name,
+        email,
+        subject,
+        text
+      };
+
+      $.post('/email', data, function() {
+        console.log('Server recieved our data');
+      });
+    });
+    // document.getElementById('#form-data').reset();

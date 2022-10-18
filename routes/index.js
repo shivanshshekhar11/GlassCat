@@ -3,6 +3,7 @@ var router = express.Router();
 var async = require('async');
 const { body,validationResult } = require('express-validator');
 require('dotenv').config();
+const sendMail = require('../mail');
 
 var Category = require('../models/category');
 var SubCategory = require('../models/subCategory');
@@ -33,6 +34,19 @@ router.get('/about', function(req, res, next) {
 /* GET company contact page. */
 router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Contact Us' });
+});
+
+router.post('/contact', (req, res) => {
+  const { phone, email, description } = req.body;
+  console.log('Data: ', req.body);
+
+  sendMail("New Client", email, "New customer mail from website", `${description}\nPhone Number - ${phone}`, function(err, data) {
+      if (err) {
+          res.render('contact', { title: 'Contact Us', error:"Internal Error" });
+      } else {
+          res.render('contact', { title: 'Contact Us', error:"Your response was successfully sent" });
+      }
+  });
 });
 
 /* GET catalogue page. */
