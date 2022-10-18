@@ -1,6 +1,24 @@
 extends layout
 
 block content
+
+  script.
+    function filterFunction() {
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      div = document.getElementById("dropdown");
+      a = div.getElementsByClassName("radio-div");
+      for (i = 0; i < a.length; i++) {
+        txtValue = a[i].id;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          a[i].style.display = "block";
+        } else {
+          a[i].style.display = "none";
+        }
+      }
+    }
+
   div#about
     h1 #{title}
 
@@ -15,9 +33,10 @@ block content
 
       div.form-group
         label Category:
-        div
+        input(type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()")
+        div#dropdown.dropdown-content
           for category in categories
-            div(style='display: inline; padding-right:10px;')
+            div.radio-div(id=category.name)
               input.radio-input(type='radio', name='category', id=category._id, value=category._id,)
               label(for=category._id) #{category.name}
 

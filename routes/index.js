@@ -81,7 +81,7 @@ router.get('/products/:id', function(req, res, next) {
   Product.findById(req.params.id)
   .exec(function (err, product) {
 
-    Product.find({subCategory: product.subCategory})
+    Product.find({subCategory: product.subCategory, _id: {$ne: product._id}})
     .exec(function (err, list_products) {
       if (err) { return next(err); }
       //Successful, so render
