@@ -1,20 +1,21 @@
 extends layout
 
 block content
-  div#about
+  div#product-list-cat.pad2 
 
     h1 #{subCategory.name}
 
     p #{subCategory.description}
 
-  ul#product-list
+  ul#product-list.pad2
     each product in Products
         li.category-items
 
-          img.subImage(src=product.image)
+          a(href="#").subImage
+            img(src=product.image title=product.name)
 
           div.subDcard
-            h3.product-name
+            h2.product-name
               a(href=product.url) #{product.name}
 
             #subDetails 
@@ -26,6 +27,10 @@ block content
               #subDetails2
                 p #[strong Payment Terms: ] #{undefined===product.paymentTerms?'-':product.paymentTerms}
                 p #[strong Delivery Time: ] #{undefined===product.deliveryTime?'-':product.deliveryTime}
+
+            #des 
+              h3 Description :-
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ea vitae adipisci illo molestias magni fuga. Voluptatibus architecto nulla velit placeat maxime, error odit recusandae saepe quos suscipit sunt quod.
 
     else
       p This category has no products
