@@ -1,1 +1,1 @@
-search functionality
+add admin nav bar to admin pages

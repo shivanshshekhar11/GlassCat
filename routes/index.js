@@ -96,4 +96,22 @@ router.get('/products/:id', function(req, res, next) {
   });
 });
 
+router.post('/search', (req, res) => {
+  const { searchInput } = req.body;
+  console.log('Data: ', req.body);
+
+  Product.find({$text: {$search: searchInput}})
+  .exec(function (err, list_products) {
+    if (err) { return next(err); }
+    
+    if(list_products.length > 12){
+      list_products = list_products.slice(0,12);
+      res.render('search', { title: 'Search Results', products: list_products });
+    }
+    else{
+      res.render('search', { title: 'Search Results', products: list_products });
+    }
+  });
+});
+
 module.exports = router;
