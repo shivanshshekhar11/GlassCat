@@ -11,7 +11,7 @@ block content
     each product in Products
         li.category-items
 
-          a(href="#").subImage
+          a(href=product.url).subImage
             img(src=product.image title=product.name)
 
           div.subDcard

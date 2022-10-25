@@ -1,38 +1,48 @@
 extends layout
 
 block content
-  div#about
-    h1 Product Details
-    
-    div#det
-      img#image(src=product.image)
+  div#product-det.pad2.d-flex
+      #pro-image
+        img(src=product.image)
 
-      div#dcard
-        h3 #{product.name}
-        p #[strong Price: ] #{undefined===product.price?'-':product.price}
-        p #[strong Model number: ] #{undefined===product.price?'-':product.model_no}
-        p #[strong Make/Company: ] #{undefined===product.price?'-':product.make}
-        p #[strong Minimum Order Quantity: ] #{undefined===product.minOrder?'-':product.minOrder}
-        p #[strong Material: ] #{undefined===product.material?'-':product.material}
+      #product-details.d-flex
+        div#dcard
+          h3 #{product.name}
+          p#price #[strong Price : ] #{undefined===product.price?'-':product.price}
+            i.fa.fa-inr / Piece
+          p #[strong Model number : ] #{undefined===product.price?'-':product.model_no}
+          p #[strong Make/Company : ] #{undefined===product.price?'-':product.make}
+          p #[strong Minimum Order Quantity : ] #{undefined===product.minOrder?'-':product.minOrder}
+          p #[strong Material : ] #{undefined===product.material?'-':product.material}
 
+        div#trade
+          p #[strong Payment Terms : ] #{undefined===product.paymentTerms?'-':product.paymentTerms}
+          p #[strong Export market : ] #{undefined===product.export?'-':product.export}
+          p #[strong Domestic Market : ] #{undefined===product.domestic?'-':product.domestic}
+          p #[strong Delivery Time : ] #{undefined===product.deliveryTime?'-':product.deliveryTime}
 
-    div#trade
-      p #[strong Payment Terms: ] #{undefined===product.paymentTerms?'-':product.paymentTerms}
-      p #[strong Export market: ] #{undefined===product.export?'-':product.export}
-      p #[strong Domestic Market: ] #{undefined===product.domestic?'-':product.domestic}
-      p #[strong Delivery Time: ] #{undefined===product.deliveryTime?'-':product.deliveryTime}
+        p#desc #{undefined===product.description?'-':product.description}
 
-    p#desc #{undefined===product.description?'-':product.description}
-
-  #products
-    p#sign Related Products 
-    ul#grid
+  #products.pad2
+    h2 Products
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, repellendus!
+    div#product-container.d-flex
       each product in products
-        li.grid-items
-          img.product-image(src=product.image)
+        div.product
+          .product-image
+            img(src=product.image)
 
-          p.product-name
-            a(href=product.url) #{product.name}
+          div.product-name
+           h3
+             a(href=product.url) #{product.name}
 
+        div.product
+            .product-image
+              img(src=product.image)
+
+            .product-name
+              h3
+                a(href=product.url) #{product.name}
+                
       else
         p This category has no products

@@ -217,6 +217,7 @@ nav{
 #product-container{
     justify-content: space-between;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 #product-container .product{
@@ -583,22 +584,20 @@ nav{
     background-color: rgba(0,0,0, 0.4);
     top:0;
     left:0;
-    transform: scale(0) rotate(0);
+    transform: scale(0);
     transition: 0.7s;
 
 }
 
 
 #product-list li:hover .subImage::after{
-    transform: scale(1) rotate(360deg);
+    transform: scale(1);
 }
 
 #product-list .subDcard{
     width: 80%;
     padding: 20px;
 }
-
-
 
 #product-list .product-name{
     text-align: center;
@@ -637,8 +636,86 @@ nav{
 }
 
 
-
+/* Sigle Product Details : Start  */
   
+#product-det{
+    background-color: #000;
+    color: #fff;
+    column-gap: 50px;
+
+}
+
+#product-det #pro-image{
+    width: 350px;
+    height: 350px;
+    border: 1px solid #fff;
+}
+
+#product-det #pro-image img{
+    width: 100%;
+}
+
+#product-details{
+    flex-direction: column;
+}
+
+#dcard h3{
+    color: var(--light);
+    font-size: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--main);
+    transition: 0.5s;
+}
+
+#dcard h3:hover{
+    color: #0b85f7;
+}
+
+#product-details #trade,
+#product-details #dcard{
+    width: 100%;
+    border-bottom: 1px solid var(--main);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+#product-details #trade p,
+#product-details #dcard p{
+    padding: 0 0 0 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+#product-details #trade p:hover,
+#product-details #dcard p:hover{
+    color: var(--light);
+}
+
+
+
+
+
+#dcard #price{
+    font-weight: bold;
+}
+
+#dcard #price strong{
+    margin-right: 5px;
+}
+
+#dcard #price i{
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+#desc{
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+
 
 /* Footer */
 
