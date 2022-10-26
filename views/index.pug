@@ -10,8 +10,9 @@ block content
         img(src='https://picsum.photos/seed/2/1024/480' alt='')
 
 
-  div#about
-    h1 Welcome to #{title}
+  div#about.pad2
+    h1 Welcome to 
+      span #{title}
 
     p Established in the year 1957 at Ambala, Haryana, India. We, Ajanta Export Industries, are one of the leading manufacturers, exporters and wholesalers of equipment and instruments used in physics, biology and chemistry labs. Besides, we are also meeting the demands of quality laboratory glassware.
 
@@ -21,43 +22,110 @@ block content
 
     p Today, our consistent business approach has helped us to emerge as a leading company in our industry sector. Further, the competitive pricing and customer centric business policies followed at our end has also helped us to gain large client following in the national and international regions. Presently, we are having a production capacity of over 1 million pieces per year that can further be expanded according to the specific order requirements coming from clients end. We also would like to assure our clients that no child labour is employed by us in any form, for production of our products.
 
-  #tagline
-
-    #tag-grid 
+  #client.d-flex
+    #client-counter.d-flex
       div.tag-items 
         h2 1000+ 
-        p Products
+          span Product
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ut dignissimos vitae tempora molestias repellendus, rem minima porro impedit facere reiciendis magni voluptatem voluptas deleniti laudantium officiis repudiandae velit quam.
+
 
       div.tag-items 
         h2 100+ 
-        p Clients
+          span Clients
+        p Lorem ipsum dolor  amet consectetur adipisicing elit. Consequuntur incidunt aut nostrum corrupti temporibus, est vero aliquid minus tenetur perferendis eum. Cum recusandae optio nam sapiente reiciendis dignissimos enim eum?
 
       div.tag-items 
         h2 100+ 
-        p Countries
+          span Countries
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, pariatur. Aspernatur non aut magni ducimus, incidunt fugit dolores tempora optio aliquam sint molestiae, eius, nam eos totam praesentium dolor nobis!
+
 
       div.tag-items 
         h2 100+ 
-        p Countries
+          span Countries
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ex odio nihil aliquam quo numquam reprehenderit, illum sit magnam dolorum quisquam pariatur, sint repellendus impedit nemo molestiae deleniti autem maiores?
 
-  #products 
-    p#sign Products
-    ul#grid
+  #products.pad2
+    h2 Products
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, repellendus!
+    div#product-container.d-flex
       each product in products
-        li.grid-items
-          img.product-image(src=product.image)
+        div.product
+          .product-image
+            img(src=product.image)
 
-          p.product-name
-            a(href=product.url) #{product.name}
+          div.product-name
+           h3
+             a(href=product.url) #{product.name}
+
+        div.product
+          .product-image
+            img(src=product.image)
+
+          div.product-name
+            h3
+              a(href=product.url) #{product.name}
+
+        div.product
+          .product-image
+            img(src=product.image)
+
+          div.product-name
+            h3
+              a(href=product.url) #{product.name}
+
+        div.product
+          .product-image
+            img(src=product.image)
+
+          div.product-name
+            h3
+              a(href=product.url) #{product.name}
+
+        div.product
+          .product-image
+            img(src=product.image)
+
+          div.product-name
+            h3
+              a(href=product.url) #{product.name}
+
+        div.product
+          .product-image
+            img(src=product.image)
+
+          div.product-name
+            h3
+              a(href=product.url) #{product.name}
+
+        div.product
+          .product-image
+            img(src=product.image)
+
+          div.product-name
+            h3
+              a(href=product.url) #{product.name}
+
+        div.product
+          .product-image
+            img(src=product.image)
+
+          div.product-name
+            h3
+              a(href=product.url) #{product.name}
+
 
       else
         p This category has no products
 
-  #contact 
-    p Tell us what you think about our products and services. We would love to hear from you. If you have any questions about placing orders or any other stuff, please feel free to contact us. We will be happy to answer your questions.
+  #contact.pad2.d-flex
+    #contact-des
+      p Tell us what you think about our products and services. We would love to hear from you. If you have any questions about placing orders or any other stuff, please feel free to contact us. We will be happy to answer your questions.
 
-    button#contact-button(type='button' disabled=true)
-      a.navlink(href="/contact") Contact Us 
+    #contact-btn.d-flex
+      button#contact-button(type='button' disabled=true)
+        a(href="/contact") Contact Us 
 
   #map 
     iframe(width="100%" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=asha%20scientific%20works&key=AIzaSyDrdKmxFhDEz-z1jmdbOJy6v2RPW9sTNOk")

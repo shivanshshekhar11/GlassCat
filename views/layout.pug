@@ -5,6 +5,7 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
     script(src="https://kit.fontawesome.com/2886b68951.js" crossorigin="anonymous")
+    script(src="/script.js") 
     script(src="https://cdn.tiny.cloud/1/qmkrsgqmcjy04hcmad5dlmlk9vh5t4owh3lwexadjm2jfh2f/tinymce/5/tinymce.min.js" referrerpolicy="origin")
     script.
       tinymce.init({
@@ -19,12 +20,11 @@ html
         img#logo(src="/images/logo.png")
         p#compName Asha Scientific Works 
 
+     
       form#search(method='POST' action='/search')
-
         div.form-group
-          input#searchInput.form-control(type='text' name='searchInput' placeholder='Search for a product ...')
-    
-        button.btn.btn-primary(type='submit') Search
+          input#searchInput.form-control(type='text' name='searchInput' placeholder='Enter search term')
+          button.btn.btn-primary(type='submit') Search
 
     nav 
       ul#navList
@@ -36,24 +36,67 @@ html
           a.navlink(href='/categories') Our Products
         li
           a.navlink(href='/contact') Contact Us
+      
+
+  
 
     block content
 
-    footer
-      #addr
-        a(href='#')
-          img.icon(src="/images/add.png")
-        p#addrText Address
+    footer.pad2.d-flex
+      .col.address
+        h4 Contact US
+        p
+          strong
+          i.fa.fa-map-marker
+          | 566 Wellington Road, Street 32, San Francisco
+        p
+          strong
+          i.fa.fa-phone
+          | +01 222 365 /(+91) 01 2345 6745
+        p
+          strong 
+          i.fa.fa-clock-o 
+          | 10:00 - 18:00, Mon - Sat
+      
+      .col
+        .first
+          h4 Follow us
+          .icons
+            a(href="#")
+              i.fab.fa-facebook-f
+            a(href="#")
+              i.fab.fa-twitter
+            a(href="#")
+              i.fab.fa-instagram
+            a(href="#")
+              i.fab.fa-pinterest-p
+            a(href="#")
+              i.fab.fa-youtube
+        
+      .col
+        .second 
+          h4 About
+          a(href='#') About Us
 
-      #phone 
-        a(href='#')
-          img.icon(src="/images/phn.png")
-        p#phoneText 041170
+          a(href='#') Contact Us
+      .copyright
+        p &copy; 2022, HTML,CSS,JavaScript Template 
 
-      #owner 
-        a(href='#')
-          img.icon(src="/images/own.png")
-        p#ownerText Mr. John Doe
-        p#ownerphone 0242319
+      //- #addr
+      //-   a(href='#')
+      //-     img.icon(src="/images/add.png")
+      //-   p#addrText Address
 
-      img#stamp(src="/images/stamp.png")
+      //- #phone 
+      //-   a(href='#')
+      //-     img.icon(src="/images/phn.png")
+      //-   p#phoneText 041170
+
+      //- #owner 
+      //-   a(href='#')
+      //-     img.icon(src="/images/own.png")
+      //-   p#ownerText Mr. John Doe
+      //-   p#ownerphone 0242319
+
+      //- img#stamp(src="/images/stamp.png")
+

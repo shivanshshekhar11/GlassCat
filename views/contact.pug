@@ -1,30 +1,56 @@
 extends layout
 
+
 block content
-  #contact-image 
-    p INSERT IMAGE HERE 
+ section.contact
+  .content
+    h2 Contact Us
+    p
+      | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos hic eos qui illum ad repellendus
+      | libero nulla quia natus culpa?
+  .contact-container
+    .contact-info
+      .box
+        .icon
+          i.fa.fa-map-marker
+        .text
+          h3 Address
+          p 566 Wellington Road, Street 32, San Francisco
+      .box
+        .icon
+          i.fa.fa-phone
+        .text
+          h3 Phone
+          p +01 222 365 /(+91) 01 2345 6745
+      .box
+        .icon
+          i.fa.fa-envelope-o
+        .text
+          h3 Email
+          p ex@gmail.com
+    .contact-form
+      form(action='' onsubmit="return validateForm()" name='myForm')
+        h3 Send Message
+        .input-box
+          input(type='text' name='' required='true' id='contact-name' placeholder='' aria-label='full-name' maxlength='30')
+          span Full Name
+        .input-box
+          input(type='phone' name='fphone' required='true' class="number" id='contact-phone' placeholder='' aria-label='full-name' max='30')
+          span Phone Number
+          small#error
 
-  div#about
-    h1 Contact Us
-
-    form(method='POST' action='')
-
-      div.form-group
-        label(for='body') Describe Your BUYING Requirement in Detail:
-        textarea#body.form-control(type='textarea', placeholder='Tips on getting accurate quotes. Please include product name, order quantity, usage, special requests if any in your inquiry.' required="true" name='description' rows="5" cols="50") #{undefined===mail ? '' : mail.body}
-
-      div.form-group
-        label(for='email') Email:
-        input#email.form-control(type='email', placeholder='cutiebun7056@polar.com' name='email' required='true' value=(undefined===mail ? '' : mail.email) )
-
-      div.form-group
-        label(for='phone') Phone Number:
-        input#phone.form-control(type='tel', name='phone' required='true' value=(undefined===mail ? '' : mail.phone))
-
-      button#submit-button.btn.btn-primary(type='submit') Submit
+        .input-box
+          input(type='email' name='' required='true' id='contact-email' placeholder='' aria-label='email')
+          span Email
+        .input-box
+          textarea(name='' id='' required='true' aria-label='text')
+          span Type Your Message
+        .input-box.d-flex
+          input(type='submit' name='' value='Send' class="check")
 
     if error 
-      div.alert.alert-danger #{error}
+      div#alert
+        p #{error}
 
   script.
     $('form').on('submit', (e) => {
