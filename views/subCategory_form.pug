@@ -40,7 +40,7 @@ block content
             for category in categories
               div.radio-div(id=category.name)
                 input.radio-input(type='radio', name='category', id=category._id, value=category._id,)
-                label(for=category._id) #{category.name}
+                label.dropdown-label(for=category._id) #{category.name}
 
         div.form-group1
           label(for='password') Password:

@@ -7,7 +7,6 @@ block content
     h2 Contact Us
     p
       | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos hic eos qui illum ad repellendus
-      | libero nulla quia natus culpa?
   .contact-container
     .contact-info
       .box
@@ -15,13 +14,13 @@ block content
           i.fa.fa-map-marker
         .text
           h3 Address
-          p 566 Wellington Road, Street 32, San Francisco
+          p Ekta Vihar
       .box
         .icon
           i.fa.fa-phone
         .text
           h3 Phone
-          p +01 222 365 /(+91) 01 2345 6745
+          p +91 1234567890
       .box
         .icon
           i.fa.fa-envelope-o
@@ -29,10 +28,10 @@ block content
           h3 Email
           p ex@gmail.com
     .contact-form
-      form(action='' onsubmit="return validateForm()" name='myForm')
+      form(action='' method="POST" name='myForm')
         h3 Send Message
         .input-box
-          input(type='text' name='' required='true' id='contact-name' placeholder='' aria-label='full-name' maxlength='30')
+          input(type='text' name='name' required='true' id='contact-name' placeholder='' aria-label='full-name' maxlength='30')
           span Full Name
         .input-box
           input(type='phone' name='fphone' required='true' class="number" id='contact-phone' placeholder='' aria-label='full-name' max='30')
@@ -40,23 +39,23 @@ block content
           small#error
 
         .input-box
-          input(type='email' name='' required='true' id='contact-email' placeholder='' aria-label='email')
+          input(type='email' name='email' required='true' id='contact-email' placeholder='' aria-label='email')
           span Email
         .input-box
-          textarea(name='' id='' required='true' aria-label='text')
+          textarea(name='description' id='' required='true' aria-label='text')
           span Type Your Message
         .input-box.d-flex
           input(type='submit' name='' value='Send' class="check")
 
-    if error 
-      div#alert
-        p #{error}
+        if error 
+          div#alert
+            p #{error}
 
   script.
     $('form').on('submit', (e) => {
       // e.preventDefault();
 
-      const name = $('#name').val().trim();
+      const name = $('#contact-name').val().trim();
       const email = $('#from-email').val().trim();
       const subject = $('#subject').val().trim();
       const text = $('#text').val().trim();

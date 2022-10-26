@@ -37,10 +37,10 @@ router.get('/contact', function(req, res, next) {
 });
 
 router.post('/contact', (req, res) => {
-  const { phone, email, description } = req.body;
+  const { name, fphone, email, description } = req.body;
   console.log('Data: ', req.body);
 
-  sendMail("New Client", email, "New customer mail from website", `${description}\nPhone Number - ${phone}`, function(err, data) {
+  sendMail(name, email, "New customer mail from website", `${description}\nPhone Number - ${fphone}`, function(err, data) {
       if (err) {
           res.render('contact', { title: 'Contact Us', error:"Internal Error" });
       } else {

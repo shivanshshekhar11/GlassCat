@@ -212,9 +212,9 @@ nav{
     background-color: var(--main);
 }
 
-#products h2{
+#products h3{
     color: var(--light);
-    font-size: 50px;
+    font-size: 30px;
     text-align: center;
     padding: 10px 0;
 }
@@ -287,6 +287,7 @@ nav{
     text-align: center;
     font-size: 35px;
     padding-bottom: 20px;
+    margin-bottom: 35px;
 
 }
 
@@ -339,12 +340,6 @@ nav{
 #our-products ul ul li a{
     color:var(--light);
 }
-
-
-
-
-
-
 
 /* Contact : Start */
 
@@ -467,6 +462,7 @@ nav{
     max-width: 800px;
     text-align: center;
     color: #fff;
+    margin-bottom: 30px;
 }
 
 .contact .content h2 {
@@ -613,20 +609,17 @@ nav{
     background-color: #111;
     color: #fff;
     transition: 0.5s;
+    text-align: start;
 }
 
 #product-list-cat h1{
     font-size: 45px;
     padding-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 #product-list-cat:hover h1{
     color: var(--light);
-}
-
-#product-list-cat p{
-    font-size: 25px;
-
 }
 
 #product-list {
@@ -645,9 +638,6 @@ nav{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     transform: scale(1);
     transition: box-shadow 0.5s,transform 0.3s;
-    
-
-
 }
 
 #product-list li:hover{
@@ -822,7 +812,7 @@ nav{
 #admin-page-1 h1{
     color: var(--light);
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 #admin-page-1 h2{
@@ -849,7 +839,7 @@ nav{
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 #admin-nav .btn{
@@ -900,7 +890,7 @@ nav{
 }
 
 .form-group1{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .form-group1 label{
@@ -912,7 +902,7 @@ nav{
 .form-group1 input{
     color: rgb(128, 126, 126);
     width: 100%;
-    margin: 5px 0;
+    margin-top: 10px;
     padding: 10px 20px;
     border-radius: 5px;
     border: 1px solid rgb(121, 116, 116);
@@ -950,10 +940,13 @@ nav{
     width: 5%;
 }
 
-
-#admin-product-form form input[type="radio"]+label,
 #admin-sub-category-form form input[name=category]+label{
     color: #fff;
+}
+
+#admin-sub-category-form form input[name=category]+label[class="dropdown-label"],
+#admin-product-form form input[type="radio"]+label[class="dropdown-label"]{
+    color: black;
 }
 
 /* admin-product-form : Start */
@@ -1052,6 +1045,12 @@ footer .copyright{
     padding-top:10px;
     text-align: center;
     border-top:1px solid #fff;
+    display:flex;
+    justify-content: space-between;
+}
+
+footer .copyright p{
+    width:30%;
 }
 
 footer .address i{
@@ -1138,21 +1137,22 @@ footer .address i{
 
   /* Links inside the dropdown */
   .dropdown-content div {
-    color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: none;
     background-color: white;
   }
-  
+
   /* Change color of dropdown links on hover */
-  .dropdown-content div:hover {background-color: grey}
+  .dropdown-content div:hover {background-color: lightgrey}
 
   #dropdown{
-    height: 65px;
+    height: 60px;
     overflow-x: hidden;
     overflow-y: auto;
     background-color: white;
+    border-radius: 10px;
+    margin-top: 10px;
   }
 
   #slider {
@@ -1192,4 +1192,23 @@ footer .address i{
 
   textarea{
     resize:none;
+  }
+
+  #contact{
+    padding:125px;
+  }
+
+  #catalogue-image img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  #product-list p{
+    color:white;
+  }
+
+  #product-list h1{
+    color:white;
+    margin-bottom: 35px;
   }

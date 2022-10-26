@@ -32,12 +32,11 @@ block content
         span #{undefined===product.deliveryTime?'-':product.deliveryTime}
 
     #desc
-     strong Description :-
-     p #{undefined===product.description?'-':product.description}
+     strong Description
+     p!= product.description
 
   #products.pad2
-    h2 Products
-    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, repellendus!
+    h3 Related Products
     div#product-container.d-flex
       each product in products
         div.product
@@ -47,14 +46,6 @@ block content
           div.product-name
            h3
              a(href=product.url) #{product.name}
-
-        div.product
-            .product-image
-              img(src=product.image)
-
-            .product-name
-              h3
-                a(href=product.url) #{product.name}
                 
       else
         p This category has no products

@@ -5,9 +5,11 @@ block content
   div#slider
     .row.large
       .imagegroup
-        img(src='https://picsum.photos/seed/1/1024/480' alt='')
-        img(src='https://picsum.photos/seed/2/1024/480' alt='')
-        img(src='https://picsum.photos/seed/2/1024/480' alt='')
+        img(src='/images/slider-01.jpg' alt='')
+        img(src='/images/slider-02.jpg' alt='')
+        img(src='/images/slider-03.jpg' alt='')
+        img(src='/images/slider-04.jpg' alt='')
+        img(src='/images/slider-05.jpg' alt='')
 
 
   div#about.pad2
@@ -47,7 +49,7 @@ block content
         p Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ex odio nihil aliquam quo numquam reprehenderit, illum sit magnam dolorum quisquam pariatur, sint repellendus impedit nemo molestiae deleniti autem maiores?
 
   #products.pad2
-    h2 Products
+    h3 Products
     p Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, repellendus!
     div#product-container.d-flex
       each product in products
@@ -58,62 +60,6 @@ block content
           div.product-name
            h3
              a(href=product.url) #{product.name}
-
-        div.product
-          .product-image
-            img(src=product.image)
-
-          div.product-name
-            h3
-              a(href=product.url) #{product.name}
-
-        div.product
-          .product-image
-            img(src=product.image)
-
-          div.product-name
-            h3
-              a(href=product.url) #{product.name}
-
-        div.product
-          .product-image
-            img(src=product.image)
-
-          div.product-name
-            h3
-              a(href=product.url) #{product.name}
-
-        div.product
-          .product-image
-            img(src=product.image)
-
-          div.product-name
-            h3
-              a(href=product.url) #{product.name}
-
-        div.product
-          .product-image
-            img(src=product.image)
-
-          div.product-name
-            h3
-              a(href=product.url) #{product.name}
-
-        div.product
-          .product-image
-            img(src=product.image)
-
-          div.product-name
-            h3
-              a(href=product.url) #{product.name}
-
-        div.product
-          .product-image
-            img(src=product.image)
-
-          div.product-name
-            h3
-              a(href=product.url) #{product.name}
 
 
       else

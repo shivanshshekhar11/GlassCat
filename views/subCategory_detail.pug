@@ -5,7 +5,7 @@ block content
 
     h1 #{subCategory.name}
 
-    p!= subCategory.description
+    p !{subCategory.description}
 
   ul#product-list.pad2
     each product in Products
@@ -20,13 +20,13 @@ block content
 
             #subDetails 
               #subDetails1
-                p #[strong Price: ] #{undefined===product.price?'-':product.price}
-                p #[strong Minimum Order Quantity: ] #{undefined===product.minOrder?'-':product.minOrder}
-                p #[strong Material: ] #{undefined===product.material?'-':product.material}
+                p #[strong Price -] #{undefined===product.price?'-':product.price}
+                p #[strong Minimum Order Quantity -] #{undefined===product.minOrder?'-':product.minOrder}
+                p #[strong Material -] #{undefined===product.material?'-':product.material}
 
               #subDetails2
-                p #[strong Payment Terms: ] #{undefined===product.paymentTerms?'-':product.paymentTerms}
-                p #[strong Delivery Time: ] #{undefined===product.deliveryTime?'-':product.deliveryTime}
+                p #[strong Payment Terms -] #{undefined===product.paymentTerms?'-':product.paymentTerms}
+                p #[strong Delivery Time -] #{undefined===product.deliveryTime?'-':product.deliveryTime}
 
 
     else
