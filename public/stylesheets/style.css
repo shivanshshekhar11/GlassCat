@@ -1189,3 +1189,7 @@ footer .address i{
        transform: translate3d(-100%,0,0);
      }
   }
+
+  textarea{
+    resize:none;
+  }

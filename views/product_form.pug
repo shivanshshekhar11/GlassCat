@@ -2,21 +2,21 @@ extends admin-layout
 
 block content
   script.
-  function filterFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    div = document.getElementById("dropdown");
-    a = div.getElementsByClassName("radio-div");
-    for (i = 0; i < a.length; i++) {
-      txtValue = a[i].id;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        a[i].style.display = "block";
-      } else {
-        a[i].style.display = "none";
+    function filterFunction() {
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      div = document.getElementById("dropdown");
+      a = div.getElementsByClassName("radio-div");
+      for (i = 0; i < a.length; i++) {
+        txtValue = a[i].id;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          a[i].style.display = "block";
+        } else {
+          a[i].style.display = "none";
+        }
       }
     }
-  }
 
   div#admin-product-form.pad2
     h1 #{title}
@@ -71,15 +71,15 @@ block content
           label(for='image') Image link:
           input#image-input.form-control(type='text', placeholder='Image Link' name='image' value=(undefined===product ? '' : product.image))
 
-        div.form-group1
-          label Sub-Category:
-          div
-            for subCategory in subCategories
-              div(style='display: inline; padding-right:10px;')
-                input.radio-input(type='radio', name='subCategory', id=subCategory._id, value=subCategory._id,)
-                label(for=subCategory._id) #{subCategory.name}
+        //- div.form-group1
+        //-   label Sub-Category:
+        //-   div
+        //-     for subCategory in subCategories
+        //-       div(style='display: inline; padding-right:10px;')
+        //-         input.radio-input(type='radio', name='subCategory', id=subCategory._id, value=subCategory._id,)
+        //-         label(for=subCategory._id) #{subCategory.name}
                 
-        div.form-group
+        div.form-group1
           label Sub-Category:
           input(type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()")
           div#dropdown.dropdown-content
