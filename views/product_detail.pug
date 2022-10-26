@@ -1,27 +1,39 @@
 extends layout
 
 block content
-  div#product-det.pad2.d-flex
+  div#product-det.pad2
+    #pro.d-flex
       #pro-image
         img(src=product.image)
 
       #product-details.d-flex
         div#dcard
           h3 #{product.name}
-          p#price #[strong Price : ] #{undefined===product.price?'-':product.price}
-            i.fa.fa-inr / Piece
-          p #[strong Model number : ] #{undefined===product.price?'-':product.model_no}
-          p #[strong Make/Company : ] #{undefined===product.price?'-':product.make}
-          p #[strong Minimum Order Quantity : ] #{undefined===product.minOrder?'-':product.minOrder}
-          p #[strong Material : ] #{undefined===product.material?'-':product.material}
+          p#price #[strong Price : ] 
+            span #{undefined===product.price?'-':product.price}
+              i.fa.fa-inr / Piece
+          p #[strong Model number : ] 
+            span #{undefined===product.price?'-':product.model_no}
+          p #[strong Make/Company : ] 
+            span #{undefined===product.price?'-':product.make}
+          p #[strong Minimum Order Quantity : ] 
+            span #{undefined===product.minOrder?'-':product.minOrder}
+          p #[strong Material : ] 
+            span #{undefined===product.material?'-':product.material}
 
-        div#trade
-          p #[strong Payment Terms : ] #{undefined===product.paymentTerms?'-':product.paymentTerms}
-          p #[strong Export market : ] #{undefined===product.export?'-':product.export}
-          p #[strong Domestic Market : ] #{undefined===product.domestic?'-':product.domestic}
-          p #[strong Delivery Time : ] #{undefined===product.deliveryTime?'-':product.deliveryTime}
+    #trade
+      p #[strong Payment Terms : ] 
+        span #{undefined===product.paymentTerms?'-':product.paymentTerms}
+      p #[strong Export market : ] 
+        span #{undefined===product.export?'-':product.export}
+      p #[strong Domestic Market : ]
+        span #{undefined===product.domestic?'-':product.domestic}
+      p #[strong Delivery Time : ] 
+        span #{undefined===product.deliveryTime?'-':product.deliveryTime}
 
-        p#desc #{undefined===product.description?'-':product.description}
+    #desc
+     strong Description :-
+     p #{undefined===product.description?'-':product.description}
 
   #products.pad2
     h2 Products

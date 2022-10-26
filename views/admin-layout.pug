@@ -5,7 +5,6 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
     script(src="https://kit.fontawesome.com/2886b68951.js" crossorigin="anonymous")
-    script(src="/script.js") 
   body
     header
       #company
@@ -20,6 +19,8 @@ html
 
     nav 
       ul#navList
+        li
+          a.navlink(href='/admin') Admin
         li
           a.navlink(href='/') Home
         li
@@ -91,4 +92,3 @@ html
       //-   p#ownerphone 0242319
 
       //- img#stamp(src="/images/stamp.png")
-

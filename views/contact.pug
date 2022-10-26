@@ -1,7 +1,7 @@
 extends layout
 
-block content
 
+block content
  section.contact
   .content
     h2 Contact Us
@@ -29,16 +29,23 @@ block content
           h3 Email
           p ex@gmail.com
     .contact-form
-      form(action='')
+      form(action='' onsubmit="return validateForm()" name='myForm')
         h3 Send Message
         .input-box
-          input(type='text' name='' required='true' placeholder='' aria-label='full-name' max='30')
+          input(type='text' name='' required='true' id='contact-name' placeholder='' aria-label='full-name' maxlength='30')
           span Full Name
         .input-box
-          input(type='text' name='' required='true' placeholder='' aria-label='email')
+          input(type='phone' name='fphone' required='true' class="number" id='contact-phone' placeholder='' aria-label='full-name' max='30')
+          span Phone Number
+          small#error
+
+        .input-box
+          input(type='email' name='' required='true' id='contact-email' placeholder='' aria-label='email')
           span Email
         .input-box
           textarea(name='' id='' required='true' aria-label='text')
           span Type Your Message
         .input-box.d-flex
-          input(type='submit' name='' value='Send')
+          input(type='submit' name='' value='Send' class="check")
+        div#alert 
+          p Message Send Successfully

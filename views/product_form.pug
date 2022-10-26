@@ -1,4 +1,4 @@
-extends layout
+extends admin-layout
 
 block content
   div#admin-product-form.pad2
@@ -69,6 +69,6 @@ block content
         button#submit-button.btn.btn-primary(type='submit') Submit
 
     if errors
-      ul
+      ul.error
         for error in errors
           li!= error.msg
