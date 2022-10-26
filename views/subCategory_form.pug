@@ -1,7 +1,26 @@
 extends admin-layout
 
 block content
-  div#admin-sub-category-form.pad2
+
+  script.
+    function filterFunction() {
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      div = document.getElementById("dropdown");
+      a = div.getElementsByClassName("radio-div");
+      for (i = 0; i < a.length; i++) {
+        txtValue = a[i].id;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          a[i].style.display = "block";
+        } else {
+          a[i].style.display = "none";
+        }
+      }
+    }
+
+  div#admin-sub-category-form.pad
+
     h1 #{title}
 
     #form.d-flex
@@ -14,10 +33,12 @@ block content
           label(for='description') Description:
           textarea#description.form-control(type='textarea', placeholder='Description ...' name='description' rows="5" cols="50") #{undefined===subCategory ? '' : subCategory.description}
 
-        div.form-group1
-          label Category:
-          div
+      div.form-group1
+        label Category:
+        input(type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()")
+        div#dropdown.dropdown-content
           for category in categories
+            div.radio-div(id=category.name)
               input.radio-input(type='radio', name='category', id=category._id, value=category._id,)
               label(for=category._id) #{category.name}
 

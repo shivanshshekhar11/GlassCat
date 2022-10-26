@@ -1,21 +1,14 @@
 extends layout
 
 block content
-  div#product-list-cat.pad2 
-
-    h1 #{subCategory.name}
-
-    p!= subCategory.description
-
-  ul#product-list.pad2
-    each product in Products
+  ul#product-list
+    each product in products
         li.category-items
 
-          a(href=product.url).subImage
-            img(src=product.image title=product.name)
+          img.subImage(src=product.image)
 
           div.subDcard
-            h2.product-name
+            h3.product-name
               a(href=product.url) #{product.name}
 
             #subDetails 
@@ -28,6 +21,5 @@ block content
                 p #[strong Payment Terms: ] #{undefined===product.paymentTerms?'-':product.paymentTerms}
                 p #[strong Delivery Time: ] #{undefined===product.deliveryTime?'-':product.deliveryTime}
 
-
     else
-      p This category has no products
+      p No products

@@ -47,5 +47,29 @@ block content
           span Type Your Message
         .input-box.d-flex
           input(type='submit' name='' value='Send' class="check")
-        div#alert 
-          p Message Send Successfully
+
+    if error 
+      div#alert
+        p #{error}
+
+  script.
+    $('form').on('submit', (e) => {
+      // e.preventDefault();
+
+      const name = $('#name').val().trim();
+      const email = $('#from-email').val().trim();
+      const subject = $('#subject').val().trim();
+      const text = $('#text').val().trim();
+
+      const data = {
+        name,
+        email,
+        subject,
+        text
+      };
+
+      $.post('/email', data, function() {
+        console.log('Server recieved our data');
+      });
+    });
+    // document.getElementById('#form-data').reset();

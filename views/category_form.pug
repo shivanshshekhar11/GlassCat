@@ -11,10 +11,6 @@ block content
           input#name.form-control(type='text', placeholder='e.g. Engineering Equipment' name='name' value=(undefined===category ? '' : category.name))
 
         div.form-group1
-          label(for='description') Description:
-          textarea#description.form-control(type='textarea', placeholder='Description ...' name='description' rows="5" cols="50") #{undefined===category ? '' : category.description}
-
-        div.form-group1
           label(for='password') Password:
           input#password.form-control(type='password' name='password' placeholder="Enter Password")
         

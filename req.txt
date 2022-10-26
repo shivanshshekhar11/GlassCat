@@ -1,7 +1,1 @@
-additional product specific categories can be added in description, which will have a word processor API.
-
-google maps API
-
-search functionality
-
-product form will have dynamic sub-category selection
+add admin nav bar to admin pages

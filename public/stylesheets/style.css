@@ -1125,6 +1125,67 @@ footer .address i{
 } */
 
 
+.tag-items{
+    background-color: darkblue;
+    padding:1em;
+}
 
+#cat-list{
+    display:grid;
+    grid-template-columns: 27% 27% 27%;
+    gap:9.5% 9.5%;
+}
 
+  /* Links inside the dropdown */
+  .dropdown-content div {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: none;
+    background-color: white;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content div:hover {background-color: grey}
 
+  #dropdown{
+    height: 65px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: white;
+  }
+
+  #slider {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+   }
+ 
+ .row {
+    display: flex;
+    overflow: hidden;
+   }
+ 
+ .imagegroup {
+    display: flex;
+    width: 100%;
+   }
+ 
+ .imagegroup img{
+   flex-shrink: 0;
+   object-fit: cover;
+ }
+ 
+ .imagegroup {
+    animation: travel 20s ease-in-out infinite;
+   }
+ 
+ @keyframes travel {
+    0%, 100% {
+       transform: translate3d(0,0,0);
+     }
+    50% {
+       transform: translate3d(-100%,0,0);
+     }
+  }

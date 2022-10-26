@@ -37,7 +37,6 @@ router.post('/category',  [
 
   // Validate and sanitize fields.
   body('name', 'Category name required').trim().isLength({ min: 1 }),
-  body('description', 'Description required').trim().isLength({ min: 1 }),
 
   // Process request after validation and sanitization.
   (req, res, next) => {
@@ -45,7 +44,6 @@ router.post('/category',  [
     // Create a category object with escaped and trimmed data.
     var category = new Category(
         { name: req.body.name,
-          description: req.body.description,
         }
     );
 
@@ -122,7 +120,8 @@ router.post('/sub-category',  [
       var subCategory = new SubCategory(
           { name: req.body.name,
             description: req.body.description,
-            category: req.body.category
+            category: req.body.category,
+            urlString: String(req.body.name).split(" ").join("-").toLocaleLowerCase()
           }
       );
 

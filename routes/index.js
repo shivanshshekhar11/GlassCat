@@ -3,6 +3,7 @@ var router = express.Router();
 var async = require('async');
 const { body,validationResult } = require('express-validator');
 require('dotenv').config();
+const sendMail = require('../mail');
 
 var Category = require('../models/category');
 var SubCategory = require('../models/subCategory');
@@ -35,6 +36,19 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Contact Us' });
 });
 
+router.post('/contact', (req, res) => {
+  const { phone, email, description } = req.body;
+  console.log('Data: ', req.body);
+
+  sendMail("New Client", email, "New customer mail from website", `${description}\nPhone Number - ${phone}`, function(err, data) {
+      if (err) {
+          res.render('contact', { title: 'Contact Us', error:"Internal Error" });
+      } else {
+          res.render('contact', { title: 'Contact Us', error:"Your response was successfully sent" });
+      }
+  });
+});
+
 /* GET catalogue page. */
 router.get('/categories', function(req, res, next) {
   Category.find({})
@@ -51,7 +65,7 @@ router.get('/categories', function(req, res, next) {
 
 /* GET sub-catagory page. */
 router.get('/categories/:url', function(req, res, next) {
-  SubCategory.findOne({url: req.params.url})
+  SubCategory.findOne({urlString: req.params.url})
   .exec(function (err, subCategory) {
     if (err) { return next(err); }
       Product.find({subCategory: subCategory._id})
@@ -67,7 +81,7 @@ router.get('/products/:id', function(req, res, next) {
   Product.findById(req.params.id)
   .exec(function (err, product) {
 
-    Product.find({subCategory: product.subCategory})
+    Product.find({subCategory: product.subCategory, _id: {$ne: product._id}})
     .exec(function (err, list_products) {
       if (err) { return next(err); }
       //Successful, so render
@@ -79,6 +93,24 @@ router.get('/products/:id', function(req, res, next) {
         res.render('product_detail', { title: product.name, products: list_products, product: product });
       }
     });
+  });
+});
+
+router.post('/search', (req, res) => {
+  const { searchInput } = req.body;
+  console.log('Data: ', req.body);
+
+  Product.find({$text: {$search: searchInput}})
+  .exec(function (err, list_products) {
+    if (err) { return next(err); }
+    
+    if(list_products.length > 12){
+      list_products = list_products.slice(0,12);
+      res.render('search', { title: 'Search Results', products: list_products });
+    }
+    else{
+      res.render('search', { title: 'Search Results', products: list_products });
+    }
   });
 });
 
