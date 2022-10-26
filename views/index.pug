@@ -2,8 +2,13 @@ extends layout
 
 block content
 
-  #imageSlider 
-    p INSERT IMAGE SLIDER HERE 
+  div#slider
+    .row.large
+      .imagegroup
+        img(src='https://picsum.photos/seed/1/1024/480' alt='')
+        img(src='https://picsum.photos/seed/2/1024/480' alt='')
+        img(src='https://picsum.photos/seed/2/1024/480' alt='')
+
 
   div#about
     h1 Welcome to #{title}
