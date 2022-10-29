@@ -10,15 +10,18 @@ html
     script.
       tinymce.init({
         selector: '#description',
-        plugins: 'lists table autocorrect',
-        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | spellcheckdialog a11ycheck | align lineheight | numlist bullist indent outdent | removeformat',
+        plugins: 'lists table autocorrect preview fullscreen searchreplace insertdatetime tinymcespellchecker a11ychecker help export',
+        menubar: 'file edit view insert tools table tc help',
+        toolbar: 'undo redo | bold italic underline | formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | removeformat | fullscreen preview save print | a11ycheck ltr rtl',
+        block_formats: 'Paragraph=p; Heading 3=h3; Heading 4=h4; Heading 5=h5; Heading 6=h6'
       });
 
   body
     header
       #company
         img#logo(src="/images/logo.png")
-        p#compName Asha Scientific Works 
+        p#compName 
+          a(href="/") Asha Scientific Works 
 
      
       form#search(method='POST' action='/search')

@@ -5,20 +5,14 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
     script(src="https://kit.fontawesome.com/2886b68951.js" crossorigin="anonymous")
-    script(src="/script.js") 
-    script(src="https://cdn.tiny.cloud/1/qmkrsgqmcjy04hcmad5dlmlk9vh5t4owh3lwexadjm2jfh2f/tinymce/5/tinymce.min.js" referrerpolicy="origin")
-    script.
-      tinymce.init({
-        selector: '#description',
-        plugins: 'lists table autocorrect',
-        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | spellcheckdialog a11ycheck | align lineheight | numlist bullist indent outdent | removeformat',
-      });
+    script(src="/script.js")
 
   body
     header
       #company
         img#logo(src="/images/logo.png")
-        p#compName Asha Scientific Works 
+        p#compName 
+          a(href="/") Asha Scientific Works
 
      
       form#search(method='POST' action='/search')

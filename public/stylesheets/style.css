@@ -38,6 +38,10 @@ a{
     color:skyblue;
 }
 
+#compName a{
+    color: white;
+}
+
 /* header */
 
 header{
@@ -1175,6 +1179,7 @@ footer .address i{
  .imagegroup img{
    flex-shrink: 0;
    object-fit: cover;
+   border-right: white 5px solid;
  }
  
  .imagegroup {
@@ -1211,4 +1216,10 @@ footer .address i{
   #product-list h1{
     color:white;
     margin-bottom: 35px;
+  }
+
+  #descDiv{
+    all:initial;
+    color: white;
+    font-family: 'Lato', sans-serif;
   }
