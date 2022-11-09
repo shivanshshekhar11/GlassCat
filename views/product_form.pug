@@ -26,43 +26,7 @@ block content
         div.form-group1
           label(for='name') Name:
           input#name.form-control(type='text', placeholder='e.g. Air Permeability Appratus' name='name' required value=(undefined===product ? '' : product.name))
-
-        div.form-group1
-          label(for='price') Price:
-          input#price.form-control(type='text', placeholder='e.g. 10000000' name='price' value=(undefined===product ? '' : product.price))
-
-        div.form-group1
-          label(for='make') Make/Company:
-          input#make.form-control(type='text', placeholder='Enter Comapny Name' name='make' value=(undefined===product ? '' : product.make))
-
-        div.form-group1
-          label(for='model_no') Model number:
-          input#model_no.form-control(type='text', placeholder='Enter Model Number' name='model_no' value=(undefined===product ? '' : product.model_no))
-
-        div.form-group1
-          label(for='minOrder') Minimum Order:
-          input#minOrder.form-control(type='text', placeholder='e.g. 1' name='minOrder' value=(undefined===product ? '' : product.minOrder))
-
-        div.form-group1
-          label(for='material') Material:
-          input#material.form-control(type='text', placeholder='e.g. Wood' name='material' value=(undefined===product ? '' : product.material))
-
-        div.form-group1
-          label(for='paymentTerms') Payment Terms:
-          input#paymentTerms.form-control(type='text', placeholder='e.g. PayPal, Wire Transfer' name='paymentTerms' value=(undefined===product ? '' : product.paymentTerms))
-
-        div.form-group1
-          label(for='export') Export Market:
-          input#export.form-control(type='text', placeholder='e.g. Europe, Americas' name='export' value=(undefined===product ? '' : product.export))
-
-        div.form-group1
-          label(for='domestic') Domestic Market:
-          input#domestic.form-control(type='text', placeholder='e.g. All over India' name='domestic' value=(undefined===product ? '' : product.domestic))
-
-        div.form-group1
-          label(for='deliveryTime') Delivery Time:
-          input#deliveryTime.form-control(type='text', placeholder='e.g. 1 week' name='deliveryTime' value=(undefined===product ? '' : product.deliveryTime))
-
+          
         div.form-group1
           label(for='description') Description:
           textarea#description.form-control(type='textarea', placeholder='Description ...' name='description' rows="20" cols="50") #{undefined===product ? '' : product.description}
@@ -72,13 +36,13 @@ block content
           input#image-input.form-control(type='text', placeholder='Image Link' name='image' value=(undefined===product ? '' : product.image))
                 
         div.form-group1
-          label Sub-Category:
+          label Category:
           input(type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()")
           div#dropdown.dropdown-content
-            for subCategory in subCategories
-              div.radio-div(id=subCategory.name)
-                input.radio-input(type='radio', name='subCategory', id=subCategory._id, value=subCategory._id,)
-                label.dropdown-label(for=subCategory._id) #{subCategory.name}
+            for Category in Categories
+              div.radio-div(id=Category.name)
+                input.radio-input(type='radio', name='Category', id=Category._id, value=Category._id,)
+                label.dropdown-label(for=Category._id) #{Category.name}
 
         div.form-group1
           label(for='password') Password:

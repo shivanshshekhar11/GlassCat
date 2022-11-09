@@ -1,10 +1,16 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-var categorySchema = new Schema(
+var CategorySchema = new Schema(
     {
-        name: {type:String, required:true}
+        name: {type:String, required:true},
+        description: {type:String, required:true},
+        urlString:{type:String, required:true}
     }
 );
 
-module.exports = mongoose.model("Category", categorySchema);
+CategorySchema.virtual("url").get(function(){
+    return "/categories/"+this.name.split(" ").join("-").toLowerCase();
+});
+
+module.exports = mongoose.model("Category", CategorySchema);

@@ -6,7 +6,6 @@ require('dotenv').config();
 const sendMail = require('../mail');
 
 var Category = require('../models/category');
-var SubCategory = require('../models/subCategory');
 var Product = require('../models/product');
 
 /* GET home page. */
@@ -18,10 +17,10 @@ router.get('/', function(req, res, next) {
     //Successful, so render
     if(list_products.length > 8){
       list_products = list_products.slice(0,8);
-      res.render('index', { title: 'Asha Scientific Works', products: list_products });
+      res.render('index', { title: 'Vishal Traders', products: list_products });
     }
     else{
-      res.render('index', { title: 'Asha Scientific Works', products: list_products });
+      res.render('index', { title: 'Vishal Traders', products: list_products });
     }
   });
 });
@@ -54,24 +53,19 @@ router.get('/categories', function(req, res, next) {
   Category.find({})
   .exec(function (err, categories) {
     if (err) { return next(err); }
-      SubCategory.find({})
-      .populate('category')
-      .exec(function (err, subCategories) {
-        if (err) { return next(err); }
-        res.render('categories', { title: 'Our Catalogue', categories: categories, subCategories: subCategories });
-      });
+    res.render('categories', { title: 'Our Catalogue', categories: categories });
   });
 });
 
 /* GET sub-catagory page. */
 router.get('/categories/:url', function(req, res, next) {
-  SubCategory.findOne({urlString: req.params.url})
-  .exec(function (err, subCategory) {
+  Category.findOne({urlString: req.params.url})
+  .exec(function (err, Category) {
     if (err) { return next(err); }
-      Product.find({subCategory: subCategory._id})
+      Product.find({Category: Category._id})
       .exec(function (err, Products) {
         if (err) { return next(err); }
-        res.render('subCategory_detail', { title: subCategory.name, subCategory: subCategory, Products: Products });
+        res.render('Category_detail', { title: Category.name, Category: Category, Products: Products });
       });
   });
 });
@@ -81,13 +75,13 @@ router.get('/products/:id', function(req, res, next) {
   Product.findById(req.params.id)
   .exec(function (err, product) {
 
-    Product.find({subCategory: product.subCategory, _id: {$ne: product._id}})
+    Product.find({Category: product.Category, _id: {$ne: product._id}})
     .exec(function (err, list_products) {
       if (err) { return next(err); }
       //Successful, so render
       if(list_products.length > 4){
         list_products = list_products.slice(0,4);
-        res.render('product_detail', { title: 'Asha Scientific Works', products: list_products, product: product });
+        res.render('product_detail', { title: 'Vishal Traders', products: list_products, product: product });
       }
       else{
         res.render('product_detail', { title: product.name, products: list_products, product: product });

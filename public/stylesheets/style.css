@@ -231,13 +231,13 @@ nav{
 }
 
 #product-container{
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: stretch;
+    display:grid;
+    grid-template-columns: repeat(4,22.5%);
+    gap:25px 3.3%;
+    margin-top: 30px;
 }
 
 #product-container .product{
-    width: 23%;
     padding: 10px 12px;
     border: 1px solid var(--light);
     border-radius: 5px;
@@ -618,7 +618,6 @@ nav{
 
 #product-list-cat h1{
     font-size: 45px;
-    padding-bottom: 20px;
     margin-bottom: 30px;
 }
 
@@ -751,50 +750,6 @@ nav{
     color: #0b85f7;
 }
 
-#trade,
-#product-details #dcard{
-    width: 100%;
-    border-bottom: 1px solid var(--main);
-    padding-bottom: 20px;
-}
-
-#product-details #dcard{
-    padding-bottom: 30px;
-}
-
-#trade p,
-#product-details #dcard p{
-    padding: 0 0 0 20px;
-    margin-bottom: 10px;
-    font-size: 20px;
-    transition: 0.5s;
-}
-
-#trade p,
-#product-details #dcard p{
-    margin-bottom: 17px;
-    color: var(--light);
-}
-
-#trade p span,
-#product-details #dcard p span{
-    margin-left: 10px;
-    color: #fff;
-}
-
-#dcard #price{
-    font-weight: bold;
-}
-
-#dcard #price strong{
-    margin-right: 5px;
-}
-
-#dcard #price i{
-    font-size: 15px;
-    margin-left: 5px;
-}
-
 #desc{
     font-size: 20px;
     padding: 10px 0 10px 20px;
@@ -803,7 +758,7 @@ nav{
 #desc strong{
     color: var(--light);
     display: block;
-    padding-bottom: 17px;
+    padding-bottom: 15px;
 }
 
 
@@ -1223,3 +1178,9 @@ footer .address i{
     color: white;
     font-family: 'Lato', sans-serif;
   }
+
+.subcat-list{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 25px 5%;
+}

@@ -1,14 +1,20 @@
 extends admin-layout
 
 block content
-  div#admin-new-category.pad2
+
+  div#admin-sub-category-form.pad2
+
     h1 #{title}
 
     #form.d-flex
       form(method='POST' action='')
         div.form-group1
           label(for='name') Name:
-          input#name.form-control(type='text', placeholder='e.g. Engineering Equipment' name='name' value=(undefined===category ? '' : category.name))
+          input#name.form-control(type='text', placeholder='e.g. Heat Transfer Lab' name='name' value=(undefined===Category ? '' : Category.name))
+
+        div.form-group1
+          label(for='description') Description:
+          textarea#description.form-control(type='textarea', placeholder='Description ...' name='description' rows="20" cols="50") #{undefined===Category ? '' : Category.description}
 
         div.form-group1
           label(for='password') Password:

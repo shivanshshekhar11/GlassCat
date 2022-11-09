@@ -7,19 +7,11 @@ block content
   div#our-products.pad2
     h1 Product Categories
 
-    ul#cat-list
-      each category in categories
-        li.list-items
-          i.fa.fa-angle-right
+    ul.subcat-list
+        each Category in categories
+            li.sublist-items
+                i.fa.fa-angle-right
+                a(href=Category.url) #{Category.name}
 
-          span.cat-name #{category.name}
-
-          ul.subcat-list
-              each subCategory in subCategories
-                  if subCategory.category.name === category.name
-                      li.sublist-items
-                        i.fa.fa-angle-right
-                        a(href=subCategory.url) #{subCategory.name}
-
-      else
-        span There are no Categories.
+        else
+          span There are no Categories.

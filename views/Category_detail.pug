@@ -1,18 +1,22 @@
 extends layout
 
 block content
-  ul#product-list.pad2
-    h1 Search Results
+  div#product-list-cat.pad2 
+
+    h1 #{Category.name}
+
+    #descDiv
+      p !{Category.description}
 
     div#product-container.d-flex
-      each product in products
+      each product in Products
         div.product
           .product-image
             img(src=product.image)
 
           div.product-name
-            h3
-              a(href=product.url) #{product.name}
+           h3
+             a(href=product.url) #{product.name}
 
       else
         p This category has no products

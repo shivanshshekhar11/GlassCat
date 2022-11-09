@@ -9,31 +9,10 @@ block content
       #product-details.d-flex
         div#dcard
           h3 #{product.name}
-          p#price #[strong Price : ] 
-            span #{undefined===product.price?'-':product.price}
-              i.fa.fa-inr / Piece
-          p #[strong Model number : ] 
-            span #{undefined===product.price?'-':product.model_no}
-          p #[strong Make/Company : ] 
-            span #{undefined===product.price?'-':product.make}
-          p #[strong Minimum Order Quantity : ] 
-            span #{undefined===product.minOrder?'-':product.minOrder}
-          p #[strong Material : ] 
-            span #{undefined===product.material?'-':product.material}
 
-    #trade
-      p #[strong Payment Terms : ] 
-        span #{undefined===product.paymentTerms?'-':product.paymentTerms}
-      p #[strong Export market : ] 
-        span #{undefined===product.export?'-':product.export}
-      p #[strong Domestic Market : ]
-        span #{undefined===product.domestic?'-':product.domestic}
-      p #[strong Delivery Time : ] 
-        span #{undefined===product.deliveryTime?'-':product.deliveryTime}
-
-    #desc
-     strong Description
-     p!= product.description
+          #desc
+            strong Description
+            p!= product.description
 
   #products.pad2
     h3 Related Products
