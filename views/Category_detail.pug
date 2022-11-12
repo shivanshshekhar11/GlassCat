@@ -10,8 +10,8 @@ block content
 
     div#product-container.d-flex
       each product in Products
-        div.product
-          .product-image
+        div.product(onclick='location.href=' + "'" + product.url + "'") 
+          .product-image(onclick='location.href=' + "'" + product.url + "'") 
             img(src=product.image)
 
           div.product-name

@@ -2,12 +2,12 @@ extends layout
 
 block content
   ul#product-list.pad2
-    h1 Search Results
+    h1 Search Results for "#{query}"
 
     div#product-container.d-flex
       each product in products
-        div.product
-          .product-image
+        div.product(onclick='location.href=' + "'" + product.url + "'") 
+          .product-image(onclick='location.href=' + "'" + product.url + "'") 
             img(src=product.image)
 
           div.product-name
@@ -15,4 +15,5 @@ block content
               a(href=product.url) #{product.name}
 
       else
-        p This category has no products
+        p No search results
+        #sad 

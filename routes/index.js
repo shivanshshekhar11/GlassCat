@@ -100,10 +100,10 @@ router.post('/search', (req, res) => {
     
     if(list_products.length > 12){
       list_products = list_products.slice(0,12);
-      res.render('search', { title: 'Search Results', products: list_products });
+      res.render('search', { title: 'Search Results', products: list_products, query: searchInput });
     }
     else{
-      res.render('search', { title: 'Search Results', products: list_products });
+      res.render('search', { title: 'Search Results', products: list_products, query: searchInput });
     }
   });
 });
