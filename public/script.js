@@ -15,3 +15,8 @@ function validateForm(){
     }
     
 }
+
+let pre=document.getElementById("preloader");
+window.addEventListener("load",()=>{
+    pre.style.display="none";
+})
