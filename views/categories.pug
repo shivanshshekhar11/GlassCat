@@ -8,8 +8,8 @@ block content
     h1 Product Categories
 
     ul.subcat-list
-        each Category in categories
-            li.sublist-items
+        each Category in categories 
+            li.sublist-items(onclick='location.href=' + "'" + Category.url + "'") 
                 i.fa.fa-angle-right
                 a(href=Category.url) #{Category.name}
 

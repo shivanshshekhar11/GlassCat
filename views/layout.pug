@@ -1,18 +1,24 @@
 doctype html
 html
   head
-    title= title
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Digital Catalogue 
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
     script(src="https://kit.fontawesome.com/2886b68951.js" crossorigin="anonymous")
-    script(src="/script.js")
+    script(src="/script.js" defer)
 
   body
+    //- #preloader
+    //-   h2#preloadertitle Loading ...
+    //-   img(src="/images/preloader.gif", alt="")
     header
       #company
-        img#logo(src="/images/logo.png")
+        //- img#logo(src="/images/logo.png")
+        h2#logo Digital Catalogue 
         p#compName 
-          a(href="/") Vishal Traders
+          //- a(href="/") Vishal Traders
 
      
       form#search(method='POST' action='/search')
@@ -70,8 +76,8 @@ html
 
           a(href='/contact') Contact Us
       .copyright
-        p &copy; 2022, Vishal Traders. All rights reserved.
-        p Developed by  
-          a(href="https://www.linkedin.com/in/shivanshshekhar11/") dev-01 
-          | and 
-          a(href="https://www.linkedin.com/in/aditya-passi-552649192/")  dev-02
+        p &copy; 2022 Digital Catalogue. All rights reserved.
+        //- p Developed by  
+        //-   a(href="https://www.linkedin.com/in/shivanshshekhar11/") dev-01 
+        //-   | and 
+        //-   a(href="https://www.linkedin.com/in/aditya-passi-552649192/")  dev-02

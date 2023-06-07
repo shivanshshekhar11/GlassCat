@@ -18,8 +18,8 @@ block content
     h3 Related Products
     div#product-container.d-flex
       each product in products
-        div.product
-          .product-image
+        div.product(onclick='location.href=' + "'" + product.url + "'") 
+          .product-image(onclick='location.href=' + "'" + product.url + "'") 
             img(src=product.image)
 
           div.product-name
