@@ -25,7 +25,7 @@ router.get('/', function(req, res) {
 
 // Display sub-category create form on GET.
 router.get('/category', function(req, res) {
-  res.render('Category_form', { title: 'Create a new category' });
+  res.render('category_form', { title: 'Create a new category' });
 });
 
 // Handle category create on POST.
