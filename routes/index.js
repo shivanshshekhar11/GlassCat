@@ -12,16 +12,11 @@ var Product = require('../models/product');
 router.get('/', function(req, res, next) {
 
   Product.find({})
+  .limit(8)
   .exec(function (err, list_products) {
     if (err) { return next(err); }
     //Successful, so render
-    if(list_products.length > 8){
-      list_products = list_products.slice(0,8);
-      res.render('index', { title: 'Vishal Traders', products: list_products });
-    }
-    else{
-      res.render('index', { title: 'Vishal Traders', products: list_products });
-    }
+    res.render('index', { title: 'Vishal Traders', products: list_products });
   });
 });
 
@@ -76,16 +71,11 @@ router.get('/products/:id', function(req, res, next) {
   .exec(function (err, product) {
 
     Product.find({Category: product.Category, _id: {$ne: product._id}})
+    .limit(4)
     .exec(function (err, list_products) {
       if (err) { return next(err); }
       //Successful, so render
-      if(list_products.length > 4){
-        list_products = list_products.slice(0,4);
-        res.render('product_detail', { title: 'Vishal Traders', products: list_products, product: product });
-      }
-      else{
-        res.render('product_detail', { title: product.name, products: list_products, product: product });
-      }
+      res.render('product_detail', { title: product.name, products: list_products, product: product });
     });
   });
 });
@@ -95,16 +85,11 @@ router.post('/search', (req, res) => {
   console.log('Data: ', req.body);
 
   Product.find({$text: {$search: searchInput}})
+  .limit(12)
   .exec(function (err, list_products) {
     if (err) { return next(err); }
     
-    if(list_products.length > 12){
-      list_products = list_products.slice(0,12);
-      res.render('search', { title: 'Search Results', products: list_products, query: searchInput });
-    }
-    else{
-      res.render('search', { title: 'Search Results', products: list_products, query: searchInput });
-    }
+    res.render('search', { title: 'Search Results', products: list_products, query: searchInput });
   });
 });
 
