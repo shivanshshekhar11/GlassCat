@@ -31,18 +31,18 @@ block content
       form(action='' method="POST" name='myForm')
         h3 Send Message
         .input-box
-          input(type='text' name='name' required='true' id='contact-name' placeholder='' aria-label='full-name' maxlength='30')
+          input(type='text' name='name' required='true' id='contact-name' placeholder='' aria-label='Full Name' autocomplete='name' maxlength='30')
           span Full Name
         .input-box
-          input(type='number' name='fphone' required='true' class="number" id='contact-phone' placeholder='' aria-label='full-name')
+          input(type='tel' name='fphone' required='true' class="number" id='contact-phone' placeholder='' aria-label='Phone Number' autocomplete='tel')
           span Phone Number
           small#error
 
         .input-box
-          input(type='email' name='email' required='true' id='contact-email' placeholder='' aria-label='email')
+          input(type='email' name='email' required='true' id='contact-email' placeholder='' aria-label='Email' autocomplete='email')
           span Email
         .input-box
-          textarea(name='description' id='' required='true' aria-label='text')
+          textarea(name='description' id='' required='true' aria-label='Message')
           span Type Your Message
         .input-box.d-flex
           input(type='submit' name='' value='Send' class="check")
